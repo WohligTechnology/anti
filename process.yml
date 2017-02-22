@@ -1,5 +1,0 @@
-apps:
-  - script: "app.js"
-    name: "Node App"
-    watch: true
-    args: "--prod"
