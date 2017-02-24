@@ -14,6 +14,10 @@ $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
+$ltGrayColor: #e6e3e3;
+$redColor: #ef3a35;
+$whiteColor: #ffffff;
+$blackColor: #0f0f0f;
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @font-face {
     font-family: 'Glyphicons Halflings';
@@ -21,8 +25,18 @@ $brand-info: #000072 !default;
     src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
 
+@font-face {
+    font-family: 'proxima-lt';
+    src: url('../fonts/ProximaNova-Light.otf');
+}
+
 body {
-    padding-top: 70px;
+    // padding-top: 70px;
+    font-family: 'proxima-lt';
+    font-size: 16px;
+    overflow-x: hidden!important;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
 }
 
 img.loading {
@@ -57,11 +71,43 @@ a,
 }
 
 footer {
-    font-size: 12px;
-    background-color: #eee;
-    padding: 10px 0;
-    p {
-        margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: $blackColor;
+    color: $ltGrayColor;
+    .ft_padd {
+        padding: 25px 0;
+        .inline-block {
+            display: inline-block;
+            .list-group-item {
+                padding: 3px 15px;
+                border: none;
+                background: transparent;
+                a {
+                    text-decoration: none;
+                    color: $ltGrayColor;
+                }
+                .form-control {
+                    background-color: rgba(119, 119, 119, 0.68);
+                    border: 0 solid $blackColor;
+                    color: white;
+                }
+                .input-group-btn {
+                    button {
+                        background-color: $redColor;
+                        border: 1px solid $redColor;
+                    }
+                }
+            }
+        }
+        //padding: 10px 0;
+        p {
+            margin: 0;
+        }
+        .search--width {
+            width: 417px;
+            float: left;
+        }
     }
 }
 
@@ -124,6 +170,158 @@ footer {
 .img-full {
     width: 100%;
     display: block;
+}
+
+
+/*sidd's CSS*/
+
+.lt_gray {
+    background-color: #e6e3e3;
+}
+
+.red_color {
+    color: $redColor;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border: none;
+    .navbar-nav {
+        float: none;
+        text-align: center;
+        margin: 66px 0 0;
+        li {
+            float: none;
+            display: inline-block;
+        }
+        li:first-child {
+            @include transform(rotate(-20deg));
+            .border {
+                border: 2px solid #ef3a35;
+                width: 34px;
+                margin: 0 auto;
+            }
+        }
+        a {
+            color: $whiteColor!important;
+            padding: 10px 22px;
+        }
+    }
+}
+
+
+/*Home.html's CSS started*/
+
+.padd_r {
+    // padding right 0 for col
+    padding-right: 0;
+}
+
+.padd_l {
+    padding-left: 0;
+}
+
+
+/*Start of categories section*/
+
+.catg {
+    background-color: $ltGrayColor;
+    .strip_img {
+        background-image: url('../img/3.jpg');
+        width: 100%;
+        height: 57px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+
+/*Start of video section*/
+
+.video {
+    position: relative;
+    background-image: url('../img/1.jpg');
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    height: 768px;
+    background-repeat: no-repeat;
+    .social_icon {
+        position: absolute;
+        top: 40%;
+        right: 15px;
+        li {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+/*start of about us section*/
+
+.abt_us {
+    background-color: $ltGrayColor;
+    .bg_img {
+        position: relative;
+        background-image: url('../img/11.png');
+        width: 100%;
+        background-position: center center;
+        background-size: contain;
+        height: 400px;
+        background-repeat: no-repeat;
+        h1 {
+            position: absolute;
+            top: 34%;
+            left: 0;
+            right: 0;
+            color: $redColor;
+            letter-spacing: 50px;
+            span.relt {
+                color: black;
+                position: relative;
+                right: -77px;
+            }
+        }
+    }
+    .flex_padd {
+        padding: 100px 0;
+        .flexslider {
+            background-color: $ltGrayColor;
+            border: none;
+            p {
+                word-spacing: 5px;
+                text-align: justify;
+            }
+            .flex-prev {
+                display: none;
+            }
+            .flex-nav-next {
+                display: none;
+            }
+            .flex-control-nav {
+                width: 18%;
+                bottom: -56px;
+                right: 0;
+            }
+            .flex-control-paging li a {
+                width: 37px;
+                height: 9px;
+                background: rgba(119, 119, 119, 0.62);
+                border-radius: 0px!important;
+            }
+            .flex-control-paging li a.flex-active {
+                background: $whiteColor;
+            }
+        }
+    }
+}
+
+
+/*End of about us section*/
+
+img.min_h {
+    min-height: 294px;
 }
 
 @import "fancybox-override";

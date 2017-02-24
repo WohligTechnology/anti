@@ -6,12 +6,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-    $scope.mySlides = [
-        'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-        'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-        'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-        'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
-    ];
+    // $scope.mySlides = [
+    //     'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
+    //     'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
+    //     'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
+    //     'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
+    // ];
+    $scope.testmonial = [{
+        title: 'Lorem Ipsum is simply dummy text',
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 0the industry's standard dummy text ever since the 1500s, when an unknown printer took a gallery of type and scrambledLorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been"
+    }, {
+        title: 'Lorem Ipsum is simply dummy text',
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 0the industry's standard dummy text ever since the 1500s, when an unknown printer took a gallery of type and scrambledLorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been"
+    }];
 })
 
 .controller('FormCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
