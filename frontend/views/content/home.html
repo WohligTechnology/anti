@@ -51,7 +51,7 @@
 <section class="catg">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <!--<div class="col-md-12">
                 <div class="strip_img"></div>
             </div>
             <div class="col-md-4  padd_r">
@@ -62,6 +62,18 @@
             </div>
             <div class="col-md-4 padd_l">
                 <a href=""><img src="frontend/img/5.jpg" class="img-responsive min_h"></a>
+            </div>-->
+            <div class="col-md-12">
+                <div class="strip_img"></div>
+                <div class="custom_flex">
+                    <flex-slider flex-slide="s in categories track by $index" prev-text="" next-text="" pause-on-hover="false" max-items="3"
+                        animation="slide" item-width="250">
+                        <li>
+                            <!--<img ng-src="{{s}}" class="img-full">-->
+                            <img ng-src="{{s}}" class="img-responsive">
+                        </li>
+                    </flex-slider>
+                </div>
             </div>
         </div>
     </div>
@@ -78,7 +90,7 @@
                 <div class="flex_padd">
                     <flex-slider animation="slide" flex-slide="s in testmonial track by $index" prev-text="" next-text="">
                         <li>
-                            <h2>{{s.title}}</h2>
+                            <h3>{{s.title}}</h3>
                             <p>{{s.text}}</p>
                         </li>
                     </flex-slider>
