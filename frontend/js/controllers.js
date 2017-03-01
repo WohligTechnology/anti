@@ -43,8 +43,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     $scope.formSubmitted = false;
 
-    TemplateService.header = "";
-    TemplateService.header1 = "views/header1.html";
+    TemplateService.header = "frontend/views/header1.html";
 })
 
 .controller('headerctrl', function ($scope, TemplateService) {
