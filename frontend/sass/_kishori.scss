@@ -1,7 +1,7 @@
 header {
     box-shadow: 0px 4px 19.11px 1.89px rgba(18, 9, 9, 0.32);
-    // width: 100%;
-    // height: 110px;
+    width: 100%;
+    height: 100px;
     background-color: $blackColor;
     .navbar-brand {
         width: 8.4%;
@@ -31,14 +31,178 @@ header {
 }
 
 .back_img {
-    background-image: url("../img/30.png");
+    background-image: url("../img/34.jpg");
     width: 100%;
-    height: 654px;
+    height:468px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     background-color:hsl(219, 29%, 9%);
-    .fiction-img{
-        
-    }
+    position: relative;
+     .facebook-img{
+         position: absolute;
+     }
+    
+   }
+ .back-color{
+         background-color: rgb(17, 22, 30);
+     }
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.Aligner-item--bottom {
+  align-self: flex-end;
+  
+}
+.pmy{
+     font-family: ProximaNova;
+color:  #ffffff;
+font-size: 18.75px;/* Approximation due to font substitution */
+font-weight: 300;
+line-height: 29.167px;/* Approximation due to font substitution */
+text-align: justify;
+// padding: 24px 0px;
+padding: 17px 0px;
+    padding-left: 97px;
+       
+    padding-right: 55px;
+  }
+  .text-released{
+      margin-top: 12px;
+      a{
+color: #ffffff !important;
+ font-family: YanoneKaffeesatz;
+  padding-right: 55px;
+ 
+
+font-size: 33.21px; 
+font-weight: 700;
+line-height: 34.628px;
+transform: scaleY(1.0036);
+letter-spacing: 4.5px;
+  
+  }
+  .inline-list{
+      display: inline;
+    //    list-style-type: none;
+ 
+  }
+  .img-car{
+      padding: 0;
+   position: relative;
+  }
+  .grad{
+  
+    position: absolute;
+    width: 100%;
+    height: 47%;
+    background: rgba(0, 0, 0, 0.45);
+    bottom: 0;
+    border-top: 3px solid rgb(17, 22, 30);
+    img{
+        margin-top: -30px;
+    }
+    h1{
+        font-family: ProximaNova;
+color: #ffffff;
+font-size: 37.36px; 
+line-height: 28.462px; 
+
+
+text-shadow: 0px 4px 7.28px rgba(18, 9, 9, 0.28);
+    }
+    h3{
+        font-family: ProximaNova;
+color: #c1c0c0 !important;
+font-size: 18.68px; 
+font-weight: 700;
+line-height: 28.462px; 
+
+
+text-shadow: 0px 4px 7.28px rgba(18, 9, 9, 0.28);
+    }
+    p{
+     font-family: ProximaNova;
+color: #ffffff;
+font-size: 18.68px; /* Approximation due to font substitution */
+font-weight: 400;
+line-height: 17.894px; /* Approximation due to font substitution */
+text-align: center;
+transform: scaleY(1.0036); /* width and height properties ommitted due to transform */
+    }
+  }
+  .container-img{
+    //   background-image: url("../img/22.jpg");
+      width: 100%;
+    //   height: 509px;
+      margin-top: 30px;
+      padding: 0;
+    //     background-position: center center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+
+  }
+  .row-margin{
+     margin-top: 23px;
+ }
+  .col-padding{
+      padding: 0px;
+      position: relative;
+
+  }
+  .imgs-4{
+      width: 100%;
+     
+  }
+  .gradient{
+          position: absolute;
+    width: 100%;
+    height: 51%;
+    background: rgba(0, 0, 0, 0.68);
+    bottom: 0;
+    border-top: 3px solid #11161e;
+img{
+        margin-top: -30px;
+    }
+    h2{
+        font-family: ProximaNova;
+color: #ffffff;
+font-size: 24.96px; 
+line-height: 28.462px;
+text-align: center;
+transform: scaleY(1.0036);
+    }
+    p{
+        font-family: ProximaNova;
+color: #c1c0c0;
+font-size: 12.48px; 
+font-weight: 700;
+line-height: 28.462px; 
+text-align: center;
+transform: scaleY(1.0036); 
+  }
+  }
+  .text{
+      margin-top:55px;
+      p{
+          font-family: YanoneKaffeesatz;
+color: #a29c9c;
+font-size: 19.53px; /* Approximation due to font substitution */
+font-weight: 700;
+text-align: center;
+letter-spacing: 4.5px;
+      }
+  .inline-list2{
+      font-family: YanoneKaffeesatz;
+color: #7b7979;
+font-size: 31.34px; /* Approximation due to font substitution */
+font-weight: 700;
+text-align: center;
+ display: inline;
+ letter-spacing: 4.5px;
+  }
+  }
+  }
