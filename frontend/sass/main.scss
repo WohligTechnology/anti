@@ -453,7 +453,43 @@
             .dis-in{
                 display: inline-block;
             }
+            // .logo-ma{
+            //     margin: 55px 0;
+            // }
+            // .search-ma{
+            //     margin: 70px 0;
+            // }
             
+            .fix-hidden{
+                background-color: transparent; 
+                .logo-ma{
+                    display: none;
+                }
+                .search-ma{
+                    display: none;
+                }   
+            }
+            .show-header {
+            .fix-hidden {
+                .bg-white{
+                background-color: #fff;
+                // padding-top: 20px;
+                margin: 0;
+            }
+            .logo-ma{
+               display: block;
+            }
+            .search-ma{
+                display: block;
+            } 
+            .ui-sl .btn-default .text-muted{
+                color: #000;
+            }
+            .navbar{
+                margin: 0;
+            }
+            }
+            }
 
                
             @import "kishori";
