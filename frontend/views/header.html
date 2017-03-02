@@ -17,7 +17,7 @@
         </div>
     </nav>
 </header>-->
-<header>
+<header ng-controller="headerctrl" class="fix-hidden">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -29,16 +29,38 @@
             </button>
                 <!--<a class="navbar-brand" ui-sref="home"><img src="frontend/img/logo.png" alt="logo" width="20"> </a>-->
             </div>
-            <ul class="nav navbar-nav text-uppercase">
+            <div class="row">
+                <div class="col-md-2">
+                <div class="dis-in logo-ma">
+                    <img src="frontend/img/LOGO.png" alt="">
+                </div>
+                </div>
+                <div class="col-md-8">
+                    <ul class="nav navbar-nav text-uppercase  dis-in">
                 <li><a href="#">Home</a>
                     <div class="border"></div>
                 </li>
-                <li><a href="#">INSPIRE</a></li>
-                <li><a href="#">FICTION</a></li>
-                <li><a href="#">TRAVEL</a></li>
-                <li><a href="#">LIBERATE</a></li>
-                <li><a href="#">CONFESSION</a></li>
+                <li><a href="#">INSPIRE</a>
+                <div class="border"></li>
+                <li><a href="#">FICTION</a>
+                <div class="border"></li>
+                <li><a href="#">TRAVEL</a>
+                <div class="border"></li>
+                <li><a href="#">LIBERATE</a> 
+                <div class="border"></li>
+                <li><a href="#">CONFESSION</a>
+                <div class="border"></li>
             </ul>
+                </div>
+                <div class="col-md-2">
+                    <div class="dis-in search-ma">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        
+            
+            
         </div>
     </nav>
 </header>

@@ -272,19 +272,29 @@
                 .navbar-nav {
                     float: none;
                     text-align: center;
-                    margin: 66px 0 0;
+                    margin: 66px 30px 0;
                     li {
                         float: none;
                         display: inline-block;
+
                     }
-                    li:first-child {
+                    li:hover{
                         @include transform(rotate(-20deg));
-                        .border {
+                         .border {
                             border: 2px solid #ef3a35;
-                            width: 34px;
+                            width: 38px;
                             margin: 0 auto;
+                            transform: initial;
                         }
                     }
+                    // li:first-child {
+                    //     @include transform(rotate(-20deg));
+                    //     .border {
+                    //         border: 2px solid #ef3a35;
+                    //         width: 34px;
+                    //         margin: 0 auto;
+                    //     }
+                    // }
                     a {
                         color: $whiteColor!important;
                         letter-spacing: 2px;
@@ -364,9 +374,9 @@
                 }
                 .flex_padd {
                     padding: 100px 0;
-                    .flexslider {
-                        background-color: $ltGrayColor;
-                        border: none;
+                    // .flexslider {
+                    //     background-color: $ltGrayColor;
+                    //     border: none;
                         h3 {
                             font-weight: 600;
                             text-align: justify;
@@ -398,7 +408,7 @@
                         .flex-control-paging li a.flex-active {
                             background: $whiteColor;
                         }
-                    }
+                    // }
                 }
             }
             /*End of about us section*/
@@ -406,7 +416,82 @@
             img.min_h {
                 min-height: 294px;
             }
+            .home-col{
+                .row{
+                    margin: 0;
+                    .col-md-6{
+                        padding: 0;
+                       
+                    }
+                }
+            }
+           
+            .email-box{
+                background: #4a4646;
+                border: #4a4646;
+            }
+            .social-share{
+                li{
+                    a{
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        background-color: #504f4f;
+                        margin: 0 auto;
+                        text-align: center;
+                        line-height: 35px;
+                         .fa:before{
+                            font-size: 20px;
+                            color: #0f0f0f;
+                        }
+                    
+                    }
+                    
+                }
+            }
+            .dis-in{
+                display: inline-block;
+            }
+            // .logo-ma{
+            //     margin: 55px 0;
+            // }
+            // .search-ma{
+            //     margin: 70px 0;
+            // }
             
+            .fix-hidden{
+                background-color: transparent; 
+                .logo-ma{
+                    display: none;
+                }
+                .search-ma{
+                    display: none;
+                }   
+            }
+            .show-header {
+            .fix-hidden {
+                .bg-white{
+                background-color: #fff;
+                // padding-top: 20px;
+                margin: 0;
+            }
+            .logo-ma{
+               display: block;
+            }
+            .search-ma{
+                display: block;
+            } 
+            .ui-sl .btn-default .text-muted{
+                color: #000;
+            }
+            .navbar{
+                margin: 0;
+            }
+            }
+            }
+
+               
             @import "kishori";
             @import "fancybox-override";
             @import "mobile";
