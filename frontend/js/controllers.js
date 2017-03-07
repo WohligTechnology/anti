@@ -23,16 +23,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 .controller('HeaderCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     $scope.$on('$viewContentLoaded', function() {
-       $(window).scroll(function() {
-           var scroller = $(document).scrollTop();
-           var height = 70;
-           if (height <= scroller) {
-               $('body').addClass('show-header');
-           } else {
-               $('body').removeClass('show-header');
-           }
-       });
+    //    $(window).scroll(function() {
+    //         var scroll = $(window).scrollTop();
+    //        console.log("hi" ,scroll);
+    //     //    var height = 70;
+    //        if (500 <= scroll) {
+    //            $(".clearHeader").addClass('show-header');
+    //        } else {
+    //            $(".clearHeader").removeClass('show-header');
+    //        }
+    //    });
+
    });
+   $(document).ready(function(){
+          $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 70) {
+        console.log('amit');
+        $(".fix-hidden").addClass("show-header");
+    }else {
+        $(".fix-hidden").removeClass("show-header");
+    }
+});
+   });
+
 })
 .controller('FormCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.changecontent("form"); //Use same name of .html file
@@ -83,6 +98,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $(window).scrollTop(0);
     });
     $.fancybox.close(true);
+       $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 70) {
+        console.log('amit');
+        $(".fix-hidden").addClass("show-header");
+    }else {
+        $(".fix-hidden").removeClass("show-header");
+    }
+});
 })
 
 .controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {

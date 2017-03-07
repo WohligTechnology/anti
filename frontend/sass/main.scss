@@ -461,7 +461,7 @@
             // }
             
             .fix-hidden{
-                background-color: transparent; 
+                background-color: black; 
                 .logo-ma{
                     display: none;
                 }
@@ -469,27 +469,31 @@
                     display: none;
                 }   
             }
-            .show-header {
-            .fix-hidden {
-                .bg-white{
-                background-color: #fff;
-                // padding-top: 20px;
-                margin: 0;
+            .fix-hidden.show-header {
+                .logo-ma { display: block; }
             }
-            .logo-ma{
-               display: block;
-            }
-            .search-ma{
-                display: block;
-            } 
-            .ui-sl .btn-default .text-muted{
-                color: #000;
-            }
-            .navbar{
-                margin: 0;
-            }
-            }
-            }
+            // .show-header {
+
+            // .fix-hidden {
+            //     .bg-white{
+            //     background-color: black;
+            //     // padding-top: 20px;
+            //     margin: 0;
+            // }
+            // .logo-ma{
+            //    display: block;
+            // }
+            // .search-ma{
+            //     display: block;
+            // } 
+            // .ui-sl .btn-default .text-muted{
+            //     color: #000;
+            // }
+            // .navbar{
+            //     margin: 0;
+            // }
+            // }
+            // }
 
                
             @import "kishori";
