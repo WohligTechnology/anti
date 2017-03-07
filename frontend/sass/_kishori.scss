@@ -11,7 +11,7 @@ header {
     .text {
         font-family: YanoneKaffeesatz;
         color: #7c7c7c;
-        font-size: 19.53px;
+        font-size: 19px;
         font-weight: 700;
         text-align: center;
         font-family: YanoneKaffeesatz;
@@ -27,23 +27,41 @@ header {
     }
 }
 
+@font-face {
+    font-family: 'proxima-lightItalic';
+    src: url('../fonts/ProximaNovaCond-Regular.otf');
+}
+
+@font-face {
+    font-family: 'proxima-EB';
+    src: url('../fonts/ProximaNova-Extrabold.otf');
+}
+
+@font-face {
+    font-family: 'proxima-SB';
+    src: url('../fonts/ProximaNova-Semibold.otf');
+}
+
+@font-face {
+    font-family: 'proxima-R';
+    src: url('../fonts/ProximaNova-Regular.otf');
+}
+
 p {
     color: #e6e3e3 !important;
-    font-size: 18px;
-    /* Approximation due to font substitution */
-    font-weight: 300;
+    font-size: 19px;
     line-height: 29.167px;
-    /* Approximation due to font substitution */
     text-align: justify;
-    // padding: 24px 0px;
-    font-family: 'proxima-lt';
+    font-family: 'proxima-R';
 }
 
-.container {
-    padding: 0;
+
+
+.bg-color {
+    background-color: rgb(17, 22, 30);
 }
 
-.back_img {
+.fiction-background {
     background-image: url("../img/34.jpg");
     width: 100%;
     height: 468px;
@@ -65,10 +83,6 @@ p {
     }
 }
 
-.back-color {
-    background-color: rgb(17, 22, 30);
-}
-
 .Aligner {
     display: flex;
     align-items: center;
@@ -82,12 +96,9 @@ p {
 .pmy {
     p {
         font-weight: 300;
-        line-height: 29.167px;
-        text-align: justify;
         // padding: 24px 0px;
-        padding: 17px 0px;
-        padding-left: 97px;
-        padding-right: 113px;
+        padding: 14px 0px;
+        margin-left: -12px;
     }
 }
 
@@ -98,7 +109,7 @@ p {
         color: #ffffff !important;
         font-family: YanoneKaffeesatz;
         padding-right: 55px;
-        font-size: 33px;
+        font-size: 28px;
         font-weight: 700;
         line-height: 34px;
         transform: scaleY(1.0036);
@@ -140,30 +151,24 @@ p {
     img {
         margin-top: -30px;
     }
-    .text-center {
-        font-family: 'proxima-lt';
+    h1 {
+        font-family: 'proxima-EB';
         color: #ffffff;
         font-size: 37px;
         line-height: 28.462px;
         text-shadow: 0px 4px 7.28px rgba(18, 9, 9, 0.28);
-        font-weight: bolder;
     }
     h3 {
-        font-family: 'proxima-lt';
+        font-family: 'proxima-SB';
         color: #c1c0c0 !important;
-        font-size: 18px;
+        font-size: 19px;
         font-weight: 700;
-        margin-top: -6px;
+        // margin-top: -6px;
         text-shadow: 0px 4px 7.28px rgba(18, 9, 9, 0.28);
     }
     p {
-        font-family: 'proxima-lt';
-        color: #ffffff !important;
-        font-size: 18px;
-        /* Approximation due to font substitution */
         font-weight: 400;
         line-height: 17px;
-        /* Approximation due to font substitution */
         text-align: center;
     }
 }
@@ -285,17 +290,43 @@ p {
         padding: 5px;
     }
 }
-.vedio{
-.video-bgimg{
-    
-      background-image: url("../img/bg2.jpg");
-      width: 100%;
-      height:940px;
-      background-repeat: no-repeat;
-      position: relative;
-}
-.video-img{
-position: absolute;
 
+.vedio {
+    .video-bgimg {
+        background-image: url("../img/bg2.jpg");
+        width: 100%;
+        height: 940px;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .video-img {
+        position: absolute;
+    }
 }
+
+// css for video 
+.video-gallery {
+   background-image: url(../img/bg2.jpg);
+   height: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 100%;
+   background-position: center center;
+   .gallery-playimg {
+       margin-top: -56px;
+   }
+}
+
+.section2 {
+   background-color: #1b2021;
+   .ul-tabs {
+       background-color: #161616;
+   }
+}
+
+// END css for video gallery
+
+
+.middle {
+    vertical-align: middle;
 }
