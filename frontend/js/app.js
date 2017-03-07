@@ -37,6 +37,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             url: "/videocast",
             templateUrl: "frontend/views/template.html",
             controller: 'VideocastCtrl'
+        })
+        .state('videogallery', {
+            url: "/videogallery",
+            templateUrl: "frontend/views/template.html",
+            controller: 'videogalleryCtrl'
         });
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);

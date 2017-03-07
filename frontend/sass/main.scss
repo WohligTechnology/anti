@@ -272,15 +272,15 @@
                 .navbar-nav {
                     float: none;
                     text-align: center;
-                    margin: 66px 30px 0;
+                    // margin: 66px 30px 0;
+                    margin-top: 30px;
                     li {
                         float: none;
                         display: inline-block;
-
                     }
-                    li:hover{
+                    li:hover {
                         @include transform(rotate(-20deg));
-                         .border {
+                        .border {
                             border: 2px solid #ef3a35;
                             width: 38px;
                             margin: 0 auto;
@@ -377,37 +377,37 @@
                     // .flexslider {
                     //     background-color: $ltGrayColor;
                     //     border: none;
-                        h3 {
-                            font-weight: 600;
-                            text-align: justify;
-                        }
-                        p {
-                            word-spacing: 5px;
-                            text-align: justify;
-                            font-size: 16.67px;
-                            font-weight: 300;
-                            color: #000000;
-                        }
-                        .flex-prev {
-                            display: none;
-                        }
-                        .flex-nav-next {
-                            display: none;
-                        }
-                        .flex-control-nav {
-                            width: 18%;
-                            bottom: -56px;
-                            right: 0;
-                        }
-                        .flex-control-paging li a {
-                            width: 37px;
-                            height: 9px;
-                            background: rgba(119, 119, 119, 0.62);
-                            border-radius: 0px!important;
-                        }
-                        .flex-control-paging li a.flex-active {
-                            background: $whiteColor;
-                        }
+                    h3 {
+                        font-weight: 600;
+                        text-align: justify;
+                    }
+                    p {
+                        word-spacing: 5px;
+                        text-align: justify;
+                        font-size: 16.67px;
+                        font-weight: 300;
+                        color: #000000;
+                    }
+                    .flex-prev {
+                        display: none;
+                    }
+                    .flex-nav-next {
+                        display: none;
+                    }
+                    .flex-control-nav {
+                        width: 18%;
+                        bottom: -56px;
+                        right: 0;
+                    }
+                    .flex-control-paging li a {
+                        width: 37px;
+                        height: 9px;
+                        background: rgba(119, 119, 119, 0.62);
+                        border-radius: 0px!important;
+                    }
+                    .flex-control-paging li a.flex-active {
+                        background: $whiteColor;
+                    }
                     // }
                 }
             }
@@ -416,23 +416,24 @@
             img.min_h {
                 min-height: 294px;
             }
-            .home-col{
-                .row{
+            
+            .home-col {
+                .row {
                     margin: 0;
-                    .col-md-6{
+                    .col-md-6 {
                         padding: 0;
-                       
                     }
                 }
             }
-           
-            .email-box{
+            
+            .email-box {
                 background: #4a4646;
                 border: #4a4646;
             }
-            .social-share{
-                li{
-                    a{
+            
+            .social-share {
+                li {
+                    a {
                         display: inline-block;
                         width: 30px;
                         height: 30px;
@@ -441,39 +442,41 @@
                         margin: 0 auto;
                         text-align: center;
                         line-height: 35px;
-                         .fa:before{
+                        .fa:before {
                             font-size: 20px;
                             color: #0f0f0f;
                         }
-                    
                     }
-                    
                 }
             }
-            .dis-in{
+            
+            .dis-in {
                 display: inline-block;
             }
+            
             // .logo-ma{
             //     margin: 55px 0;
             // }
             // .search-ma{
             //     margin: 70px 0;
             // }
-            
-            .fix-hidden{
-                background-color: black; 
-                .logo-ma{
+            .fix-hidden {
+                background-color: black;
+                .logo-ma {
                     display: none;
                 }
-                .search-ma{
+                .search-ma {
                     display: none;
-                }   
+                }
             }
+            
             .fix-hidden.show-header {
-                .logo-ma { display: block; }
+                .logo-ma {
+                    display: block;
+                }
             }
+            
             // .show-header {
-
             // .fix-hidden {
             //     .bg-white{
             //     background-color: black;
@@ -494,8 +497,6 @@
             // }
             // }
             // }
-
-               
             @import "kishori";
             @import "fancybox-override";
             @import "mobile";
