@@ -58,6 +58,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.header = "frontend/views/header1.html";
 })
 
+.controller('InspireCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("inspire"); //Use same name of .html file
+    $scope.menutitle = NavigationService.makeactive("Inspire"); //This is the Title of the Website
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.formSubmitted = false;
+
+  
+})
+.controller('VideocastCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.changecontent("videocast"); //Use same name of .html file
+    $scope.menutitle = NavigationService.makeactive("Videocast"); //This is the Title of the Website
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.formSubmitted = false;
+
+  
+})
+
 .controller('headerctrl', function ($scope, TemplateService) {
     $scope.template = TemplateService;
     $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {

@@ -27,6 +27,16 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             url: "/fiction",
             templateUrl: "frontend/views/template.html",
             controller: 'FictionCtrl'
+        })
+        .state('inspire', {
+            url: "/inspire",
+            templateUrl: "frontend/views/template.html",
+            controller: 'InspireCtrl'
+        })
+        .state('videocast', {
+            url: "/videocast",
+            templateUrl: "frontend/views/template.html",
+            controller: 'VideocastCtrl'
         });
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);

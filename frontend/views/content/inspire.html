@@ -1,62 +1,60 @@
-<div class="back-color">
-    <div class="back_img Aligner">
-     
-        <div class="social_icon">
-            <ul class="list-unstyled social-share">
-                <li>
-                    <a href="">
-                        <i class="fa fa-facebook " aria-hidden="true"></i>
-                    </a>
+<div class="background-brown">
+    <div class="background-img ">
+
+        <div class="row">
+             <div class="social_icon pull-right">
+                <ul class="list-unstyled social-share social-share2">
+                    <li>
+                        <a href="">
+                            <i class="fa fa-facebook " aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-twitter " aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-instagram " aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-pinterest-p " aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-youtube " aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8 col-md-push-2 ">
+                <p>The printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                    the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries.The printing and typesetting industry.
+                </p>
+            </div>
+           
+        </div>
+        <div class="text-center text-released">
+            <ul ng-init="viewDetail=1">
+                <li class="inline-list " ng-click="viewDetail = 1;" ng-class="{' visible-li': viewDetail==1, '': viewDetail!==1}">RELEASED
+                    <div class="border-active"> </div>
                 </li>
-                <li>
-                    <a href=""><i class="fa fa-twitter " aria-hidden="true"></i></a>
-                </li>
-                <li>
-                   <a href=""><i class="fa fa-instagram " aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href=""><i class="fa fa-pinterest-p " aria-hidden="true"></i></a>
-                </li>
-                <li>
-                     <a href=""><i class="fa fa-youtube " aria-hidden="true"></i></a>
+                <li class="inline-list " ng-click="viewDetail = 2;" ng-class="{' visible-li': viewDetail==2, '': viewDetail!==2}">UPCOMING
+                    <div class="border-active"></div>
                 </li>
             </ul>
         </div>
-        <div class="Aligner-item--bottom">
-            <div class="row">
-                <div class="col-md-10 col-md-push-1 ">
-                    <div class="pmy">
-                    <p >The printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
-                        the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-                        book. It has survived not only five centuries.The printing and typesetting industry.
-                    </p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    <div class="text-center text-released"  >
-        <ul  ng-init="viewDetail=1">
-            <li class="inline-list view-data active" ng-click="viewDetail = 1;" ng-class="{'active visible-li': viewDetail==1, '': viewDetail!==1}">RELEASED <div class="border-active"> </div></li>
-            <li class="inline-list view-data active" ng-click="viewDetail = 2;" ng-class="{'active visible-li': viewDetail==2, '': viewDetail!==2}">UPCOMING <div class="border-active"></div></li>
-        </ul>
-    </div>
-     
-        <div class="container">
-           <div ng-show="viewDetail==1">
+    <div class="container">
+        <div ng-show="viewDetail==1">
             <div class="row">
-                <div class="col-md-12 img-car"  >
-
+                <div class="col-md-12 img-car ">
                     <div class="">
-                        <img src="frontend/img/22.jpg " alt="" class="image-responsive container-img">
+                        <img src="frontend/img/22.jpg " alt="" class="image-responsive container-img2">
                     </div>
                     <div class="grad text-center">
                         <div> <img src="frontend/img/26.png " alt=""></div>
-                        <h1 class="text-center">venture out</h1>
+                        <h1 class="text-center">VENTURE OUT</h1>
                         <h3> BY ALAN WATTS</h3>
                         <p>“Your life can be the greatest adventure you've ever dreamed of."</p>
-                            <p> A thought-provoking video narrated
-                            by Alan Watts.</p>
+                        <p> A thought-provoking video narrated by Alan Watts.</p>
                     </div>
                 </div>
             </div>
@@ -94,21 +92,19 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-            <div class="text-center text">
-                <p>ALSO VIEW STORIES FROM:</p>
-                <ul>
-                    <li class="inline-list2">INSPIRE </li>
-                    <li class="inline-list2">LIBERATE </li>
-                    <li class="inline-list2">CONFESSION </li>
-                </ul>
-            </div>
+                    <div class="text-center text">
+                        <p>ALSO VIEW STORIES FROM:</p>
+                        <ul class="ul-margin">
+                            <li class="inline-list2">INSPIRE </li>
+                            <li class="inline-list2">LIBERATE </li>
+                            <li class="inline-list2">CONFESSION </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-     
-           </div>
-            <div ng-show="viewDetail==2">
-            
-                 <div class="row">
+        </div>
+        <div ng-show="viewDetail==2">
+            <!--<div class="row">
                 <div class="col-md-12 img-car"  >
 
                     <div class="">
@@ -123,7 +119,7 @@
                             by alan watts</p>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!--<div class="clearfix"></div>-->
             <div class="row row-margin">
                 <div class="col-md-4 col-padding  ">
@@ -158,17 +154,16 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-            <div class="text-center text">
-                <p>ALSO VIEW STORIES FROM:</p>
-                <ul>
-                    <li class="inline-list2">INSPIRE </li>
-                    <li class="inline-list2">LIBERATE </li>
-                    <li class="inline-list2">CONFESSION </li>
-                </ul>
+                    <div class="text-center text">
+                        <p>ALSO VIEW STORIES FROM:</p>
+                        <ul>
+                            <li class="inline-list2">INSPIRE </li>
+                            <li class="inline-list2">LIBERATE </li>
+                            <li class="inline-list2">CONFESSION </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-               
-            </div>
-            </div>
-
         </div>
     </div>
+</div>

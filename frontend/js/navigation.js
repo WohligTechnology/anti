@@ -22,6 +22,19 @@ var navigationservice = angular.module('navigationservice', [])
             classis: "active",
             anchor: "fiction",
             subnav: []
+        },
+
+         {
+            name: "Inspire",
+            classis: "active",
+            anchor: "inspire",
+            subnav: []
+        },
+         {
+            name: "Videocast",
+            classis: "active",
+            anchor: "videocast",
+            subnav: []
         }
     ];
 
