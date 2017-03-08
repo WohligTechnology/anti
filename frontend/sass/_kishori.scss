@@ -47,9 +47,11 @@ header {
     src: url('../fonts/ProximaNova-Regular.otf');
 }
 
+
+
 p {
     color: #e6e3e3 !important;
-    font-size: 19px;
+    font-size: 18px !important;
     line-height: 29.167px;
     text-align: justify;
     font-family: 'proxima-R';
@@ -99,6 +101,7 @@ p {
         // padding: 24px 0px;
         padding: 14px 0px;
         margin-left: -12px;
+            margin-right: 63px;
     }
 }
 
@@ -208,28 +211,33 @@ p {
         margin-top: -30px;
     }
     h2 {
-        font-family: 'proxima-lt';
+       font-family: 'proxima-EB';
         color: #ffffff;
         font-size: 24px;
         text-align: center;
         font-weight: bolder;
     }
-    p {
+    h5 {
+         font-family: 'proxima-SB';
         color: #c1c0c0;
         font-size: 12px;
         font-weight: 700;
         text-align: center;
+        line-height: 28.462px;
     }
 }
 
 .text {
-    margin-top: 55px;
+    margin-top: 62px;
+    .text-ul{
+          margin-bottom: 62px;
+    }
     p {
         font-family: YanoneKaffeesatz;
-        color: #a29c9c;
+        color: #a29c9c !important;
         font-size: 19px;
-        /* Approximation due to font substitution */
-        // font-weight: 700;
+     
+        font-weight: 700;
         text-align: center;
         letter-spacing: 4.5px;
         font-weight: bold;
@@ -237,35 +245,39 @@ p {
     .inline-list2 {
         font-family: YanoneKaffeesatz;
         color: #7b7979;
-        font-size: 31.34px;
-        /* Approximation due to font substitution */
-        // font-weight: 700;
+        font-size: 31px;
+       
         text-align: center;
         display: inline;
         letter-spacing: 4.5px;
-        font-weight: bold;
+       font-weight: 700;
         padding: 23px;
     }
 }
+
+// End Fiction css
 
 .background-brown {
     background-color: rgb(23, 19, 19);
 }
 
 .background-img {
-    background-image: url("../img/inspire2.jpg");
+    background-image: url("../img/bginspire.jpg");
     //  
-    height: 692px;
+    
     width: 100%;
-    margin-top: -87px;
+    height: 100%;
+
     position: relative;
-    background-position: 100% 0;
+    // background-position: 100% 0;
     background-size: cover;
-    background-image: center center;
+    background-position: center center;
     background-repeat: no-repeat;
     // transform: translate(0 ,-13%);
     p {
-        margin-top: 275px;
+        // mar
+        text-align: center;
+vertical-align: middle;
         padding-left: 156px;
         padding-right: 50px;
         padding: 17px 0px;
