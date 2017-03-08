@@ -3,11 +3,22 @@
         <div class="section1">
             <div class="gallery-playimg">
                 <img src="frontend/img/copy.png" alt="" class="img-responsive">
+                <div class="absolute-content">
+                    <div class="inblock">
+                        <p>Watch</p>
+                    </div>
+                    <div class="inblock">
+                        <img src="frontend/img/videogallery/play.png" alt="" class="img-responsive play__img">
+                    </div>
+                    <div class="inblock">
+                        <p>now</p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h1>Venture Out</h1>
-                <p>by allan watts</p>
-                <div>
+            <div class="title-sec">
+                <h1 class="venture-head">Venture Out</h1>
+                <p class="venture-name">by allan watts</p>
+                <div class="social">
                     <ul class="list-unstyled list-inline">
                         <li>
                             <a href=""><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
@@ -31,6 +42,7 @@
                         numquam consequatur nisi culpa dignissimos tempora ratione praesentium sed quas tenetur, omnis odit
                         nihil cum! Blanditiis!
                     </p>
+                    <!--{{mygallery}}-->
                     <p><a href="">view the story</a></p>
                 </div>
             </div>
@@ -39,16 +51,16 @@
 </div>
 <div class="section2">
     <div class="container">
-        <div class="text-center ul-tabs">
-            <ul class="list-unstyled list-inline">
+        <div class="text-center">
+            <ul class="list-unstyled list-inline ul-tabs">
                 <li>cast &amp; crew</li>
                 <li>gallery</li>
                 <li>behind the scenes</li>
                 <li>social media</li>
             </ul>
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="" alt="" class="img-responsive">
+            <div class="row marg0" ng-repeat="mygallery in gallery">
+                <div class="col-md-2 col-md-push-1 padd1" ng-repeat="gall in mygallery">
+                    <img ng-src="{{gall}}" alt="" class="img-responsive">
                 </div>
             </div>
         </div>
