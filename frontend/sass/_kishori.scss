@@ -27,37 +27,33 @@ header {
     }
 }
 
-@font-face {
-    font-family: 'proxima-lightItalic';
-    src: url('../fonts/ProximaNovaCond-Regular.otf');
+.inspire-slider {
+    li {
+        position: relative;
+    }
+    .play {
+        width: 29px;
+        position: absolute;
+        top: 49%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+    }
+    .flex-prev{
+        display: none;
+    }
+    .flex-next{
+        display: none;
+    }
 }
-
-@font-face {
-    font-family: 'proxima-EB';
-    src: url('../fonts/ProximaNova-Extrabold.otf');
-}
-
-@font-face {
-    font-family: 'proxima-SB';
-    src: url('../fonts/ProximaNova-Semibold.otf');
-}
-
-@font-face {
-    font-family: 'proxima-R';
-    src: url('../fonts/ProximaNova-Regular.otf');
-}
-
-
 
 p {
-    color: #e6e3e3 !important;
-    font-size: 18px !important;
+    color: #e6e3e3 ;
+    font-size: 18px ;
     line-height: 29.167px;
     text-align: justify;
     font-family: 'proxima-R';
 }
-
-
 
 .bg-color {
     background-color: rgb(17, 22, 30);
@@ -101,7 +97,7 @@ p {
         // padding: 24px 0px;
         padding: 14px 0px;
         margin-left: -12px;
-            margin-right: 63px;
+        margin-right: 63px;
     }
 }
 
@@ -139,15 +135,13 @@ p {
     }
 }
 
-.img-car {
-    padding: 0;
-    position: relative;
-}
-
+// .img-car {
+//     position: relative;
+// }
 .grad {
     position: absolute;
     width: 100%;
-    height: 47%;
+    height: 50%;
     background: rgba(0, 0, 0, 0.45);
     bottom: 0;
     border-top: 3px solid rgb(17, 22, 30);
@@ -192,12 +186,21 @@ p {
 }
 
 .col-padding {
-    padding: 0px;
+    // padding: 0px;
     position: relative;
 }
 
 .imgs-4 {
     width: 100%;
+}
+
+.flexslider {
+    margin: 20px 0px 60px;
+    border: none;
+}
+
+.img-car-position {
+    position: relative;
 }
 
 .gradient {
@@ -211,14 +214,14 @@ p {
         margin-top: -30px;
     }
     h2 {
-       font-family: 'proxima-EB';
+        font-family: 'proxima-EB';
         color: #ffffff;
         font-size: 24px;
         text-align: center;
         font-weight: bolder;
     }
     h5 {
-         font-family: 'proxima-SB';
+        font-family: 'proxima-SB';
         color: #c1c0c0;
         font-size: 12px;
         font-weight: 700;
@@ -229,14 +232,13 @@ p {
 
 .text {
     margin-top: 62px;
-    .text-ul{
-          margin-bottom: 62px;
+    .text-ul {
+        margin-bottom: 62px;
     }
     p {
         font-family: YanoneKaffeesatz;
         color: #a29c9c !important;
         font-size: 19px;
-     
         font-weight: 700;
         text-align: center;
         letter-spacing: 4.5px;
@@ -246,28 +248,24 @@ p {
         font-family: YanoneKaffeesatz;
         color: #7b7979;
         font-size: 31px;
-       
         text-align: center;
         display: inline;
         letter-spacing: 4.5px;
-       font-weight: 700;
+        font-weight: 700;
         padding: 23px;
     }
 }
 
 // End Fiction css
-
 .background-brown {
     background-color: rgb(23, 19, 19);
 }
 
 .background-img {
-    background-image: url("../img/bginspire.jpg");
+    background-image: url("../img/q.jpg");
     //  
-    
     width: 100%;
     height: 100%;
-
     position: relative;
     // background-position: 100% 0;
     background-size: cover;
@@ -277,13 +275,18 @@ p {
     p {
         // mar
         text-align: center;
-vertical-align: middle;
-        padding-left: 156px;
-        padding-right: 50px;
-        padding: 17px 0px;
+        vertical-align: middle;
+        // padding-left: 156px;
+        // padding-right: 50px;
+        // padding: 17px 0px;
         font-weight: 300;
-        line-height: 29.167px;
+        // line-height: 29.167px;
         text-align: justify;
+    }
+    .background-para {
+        bottom: 19px;
+        position: absolute;
+        padding: 54px 0;
     }
 }
 
@@ -301,6 +304,9 @@ vertical-align: middle;
     li {
         padding: 5px;
     }
+    a {
+        background-color: #7b716d !important;
+    }
 }
 
 .vedio {
@@ -317,6 +323,10 @@ vertical-align: middle;
 }
 
 // css for video 
+.inblock {
+   display: inline-block;
+}
+
 .video-gallery {
    background-image: url(../img/bg2.jpg);
    height: 100%;
@@ -326,6 +336,49 @@ vertical-align: middle;
    background-position: center center;
    .gallery-playimg {
        margin-top: -56px;
+       position: relative;
+       .absolute-content {
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           @include transform(translate(-50%,
+           -50%));
+           .inblock {
+               vertical-align: middle;
+               p {
+                   text-transform: uppercase;
+                   margin: 0;
+                   font-weight: bold;
+                   color: #fff;
+               }
+               .play__img {
+                   width: 40px;
+               }
+           }
+       }
+   }
+}
+
+.section1 {
+   .title-sec {
+       .venture-head {
+           font-weight: bold;
+           color: #fff;
+           text-transform: uppercase;
+           margin: 0;
+           font-family: 'proxima-EB';
+       }
+       .venture-name {
+           font-weight: bold;
+           text-transform: uppercase;
+           font-size: 14px;
+           color: #979797;
+       }
+       .social {
+           .fa {
+               color: #979797;
+           }
+       }
    }
 }
 
@@ -336,9 +389,18 @@ vertical-align: middle;
    }
 }
 
-// END css for video gallery
-
-
-.middle {
-    vertical-align: middle;
+.marg0 {
+   margin: 0;
 }
+
+.padd1 {
+   padding: 1px;
+}
+
+// END css for video gallery
+.middle {
+   vertical-align: middle;
+}
+
+
+

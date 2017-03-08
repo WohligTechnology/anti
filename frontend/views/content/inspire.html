@@ -1,8 +1,7 @@
 <div class="background-brown">
     <div class="background-img ">
-
         <div class="row">
-             <div class="social_icon pull-right">
+            <div class="social_icon pull-right">
                 <ul class="list-unstyled social-share social-share2">
                     <li>
                         <a href="">
@@ -23,13 +22,12 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-8 col-md-push-2 ">
+            <div class="col-md-8 col-md-push-2 background-para ">
                 <p>The printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
                     the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     It has survived not only five centuries.The printing and typesetting industry.
                 </p>
             </div>
-           
         </div>
         <div class="text-center text-released">
             <ul ng-init="viewDetail=1">
@@ -44,6 +42,81 @@
     </div>
     <div class="container">
         <div ng-show="viewDetail==1">
+            <div class="row">
+                <div class="col-md-12  ">
+                    <div class="img-car-position">
+                        <img src="frontend/img/22.jpg " alt="" class="image-responsive container-img2">
+                        <div class="grad text-center">
+                            <div> <img src="frontend/img/26.png " alt=""></div>
+                            <h1 class="text-center">VENTURE OUT</h1>
+                            <h3> BY ALAN WATTS</h3>
+                            <p>“Your life can be the greatest adventure you've ever dreamed of."</p>
+                            <p> A thought-provoking video narrated by Alan Watts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="clearfix"></div>-->
+            <!--<div class="row row-margin">
+                <div class="col-md-4 col-padding  ">
+                    <div>
+                        <img src="frontend/img/24.jpg " alt="" class="image-responsive imgs-4">
+                    </div>
+                    <div class="gradient text-center">
+                        <div> <img src="frontend/img/26.png " alt=""></div>
+                        <h2>THE EARTH BELOW</h2>
+                        <h5>BY CHRISTIAN GREWE</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-padding  ">
+                    <div>
+                        <img src="frontend/img/23.jpg " alt="" class="image-responsive imgs-4">
+                    </div>
+                    <div class="gradient text-center">
+                        <div> <img src="frontend/img/26.png " alt=""></div>
+                        <h2>THE TWO-DOLLAR BILL</h2>
+                        <h5>BY CHRISTIAN GREWE</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 col-padding ">
+                    <div>
+                        <img src="frontend/img/21.jpg " alt="" class="image-responsive imgs-4"></div>
+                    <div class="gradient text-center">
+                        <div> <img src="frontend/img/26.png " alt=""></div>
+                        <h2>ONE PEBBLE AT A TIME</h2>
+                        <h5>BY CHRISTIAN GREWE</h5>
+                    </div>
+                </div>
+            </div>-->
+            <div class="inspire-slider">
+                <flex-slider class="carousel" animation="slide" flex-slide="myslide in inspireImg track by $index" prev-text="" next-text=""
+                    max-items="3" item-width="350" item-margin="0">
+                    <li>
+                        <img ng-src="{{myslide.img}}" class="posi-rel">
+                        <div class="play"> <img src="frontend/img/26.png " alt=""></div>
+                        <div class="gradient text-center">
+                            <h2>{{myslide.title1}}</h2>
+                            <h5>{{myslide.title2}}</h5>
+                        </div>
+                    </li>
+                </flex-slider>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center text">
+                        <p>ALSO VIEW STORIES FROM:</p>
+                        <div class="text-ul">
+                            <ul class="ul-margin">
+                                <li class="inline-list2">INSPIRE </li>
+                                <li class="inline-list2">LIBERATE </li>
+                                <li class="inline-list2">CONFESSION </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-show="viewDetail==2">
             <div class="row">
                 <div class="col-md-12 img-car ">
                     <div class="">
@@ -77,7 +150,7 @@
                     <div class="gradient text-center">
                         <div> <img src="frontend/img/26.png " alt=""></div>
                         <h2>THE TWO-DOLLAR BILL</h2>
-                        <p>BY CHRISTIAN GREWE</p>
+                        <h5>BY CHRISTIAN GREWE</h5>
                     </div>
                 </div>
                 <div class="col-md-4 col-padding ">
@@ -86,7 +159,7 @@
                     <div class="gradient text-center">
                         <div> <img src="frontend/img/26.png " alt=""></div>
                         <h2>ONE PEBBLE AT A TIME</h2>
-                        <p>BY CHRISTIAN GREWE</p>
+                        <h5>BY CHRISTIAN GREWE</h5>
                     </div>
                 </div>
             </div>
@@ -94,73 +167,13 @@
                 <div class="col-md-12">
                     <div class="text-center text">
                         <p>ALSO VIEW STORIES FROM:</p>
-                        <ul class="ul-margin">
-                            <li class="inline-list2">INSPIRE </li>
-                            <li class="inline-list2">LIBERATE </li>
-                            <li class="inline-list2">CONFESSION </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div ng-show="viewDetail==2">
-            <!--<div class="row">
-                <div class="col-md-12 img-car"  >
-
-                    <div class="">
-                        <img src="frontend/img/22.jpg " alt="" class="image-responsive container-img">
-                    </div>
-                    <div class="grad text-center">
-                        <div> <img src="frontend/img/26.png " alt=""></div>
-                        <h1 class="text-center">venture out</h1>
-                        <h3> BY ALAN WATTS</h3>
-                        <p>"Your life can be the greatest adventure you've ever dreamed of."</p>
-                            <p> A thought-provoking video narrated
-                            by alan watts</p>
-                    </div>
-                </div>
-            </div>-->
-            <!--<div class="clearfix"></div>-->
-            <div class="row row-margin">
-                <div class="col-md-4 col-padding  ">
-                    <div>
-                        <img src="frontend/img/24.jpg " alt="" class="image-responsive imgs-4">
-                    </div>
-                    <div class="gradient text-center">
-                        <div> <img src="frontend/img/26.png " alt=""></div>
-                        <h2>THE EARTH BELOW</h2>
-                        <p>BY CHRISTIAN GREWE</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-padding  ">
-                    <div>
-                        <img src="frontend/img/23.jpg " alt="" class="image-responsive imgs-4">
-                    </div>
-                    <div class="gradient text-center">
-                        <div> <img src="frontend/img/26.png " alt=""></div>
-                        <h2>THE TWO-DOLLAR BILL</h2>
-                        <p>BY CHRISTIAN GREWE</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-padding ">
-                    <div>
-                        <img src="frontend/img/21.jpg " alt="" class="image-responsive imgs-4"></div>
-                    <div class="gradient text-center">
-                        <div> <img src="frontend/img/26.png " alt=""></div>
-                        <h2>ONE PEBBLE AT A TIME</h2>
-                        <p>BY CHRISTIAN GREWE</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center text">
-                        <p>ALSO VIEW STORIES FROM:</p>
-                        <ul>
-                            <li class="inline-list2">INSPIRE </li>
-                            <li class="inline-list2">LIBERATE </li>
-                            <li class="inline-list2">CONFESSION </li>
-                        </ul>
+                        <div class="text-ul">
+                            <ul>
+                                <li class="inline-list2">INSPIRE </li>
+                                <li class="inline-list2">LIBERATE </li>
+                                <li class="inline-list2">CONFESSION </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

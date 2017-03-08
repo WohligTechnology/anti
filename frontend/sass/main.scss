@@ -34,6 +34,26 @@
                 src: url('../fonts/ProximaNova-Light.otf');
             }
             
+            @font-face {
+                font-family: 'proxima-lightItalic';
+                src: url('../fonts/ProximaNovaCond-Regular.otf');
+            }
+            
+            @font-face {
+                font-family: 'proxima-EB';
+                src: url('../fonts/ProximaNova-Extrabold.otf');
+            }
+            
+            @font-face {
+                font-family: 'proxima-SB';
+                src: url('../fonts/ProximaNova-Semibold.otf');
+            }
+            
+            @font-face {
+                font-family: 'proxima-R';
+                src: url('../fonts/ProximaNova-Regular.otf');
+            }
+            
             body {
                 // padding-top: 70px;
                 font-family: 'proxima-lt';
