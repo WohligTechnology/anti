@@ -71,6 +71,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.formSubmitted = false;
 
         // TemplateService.header = "frontend/views/header1.html";
+
         $scope.inspireImg = [{
             img: 'frontend/img/67.jpg',
             title1: 'THE EARTH BELOW',
@@ -96,6 +97,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             title1: 'ONE PEBBLE AT A TIME',
             title2: 'BY CHRISTIAN GREWE'
         }]
+
+
+
+
     })
 
     .controller('InspireCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
