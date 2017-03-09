@@ -71,6 +71,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.formSubmitted = false;
 
         // TemplateService.header = "frontend/views/header1.html";
+
+       
     })
 
     .controller('InspireCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
