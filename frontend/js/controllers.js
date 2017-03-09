@@ -71,6 +71,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.formSubmitted = false;
 
         // TemplateService.header = "frontend/views/header1.html";
+        $scope.inspireImg = [{
+            img: 'frontend/img/67.jpg',
+            title1: 'THE EARTH BELOW',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/23.jpg',
+            title1: 'THE TWO-DOLLAR BILL',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/84.jpg',
+            title1: 'ONE PEBBLE AT A TIME',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/67.jpg',
+            title1: 'THE EARTH BELOW',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/23.jpg',
+            title1: 'THE TWO-DOLLAR BILL',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/84.jpg',
+            title1: 'ONE PEBBLE AT A TIME',
+            title2: 'BY CHRISTIAN GREWE'
+        }]
     })
 
     .controller('InspireCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
@@ -88,30 +113,30 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //     'frontend/img/23.jpg',
         //     'frontend/img/21.jpg'
         // ]
-        $scope.inspireImg=[{
-            img:'frontend/img/67.jpg',
-            title1:'THE EARTH BELOW',
-            title2:'BY CHRISTIAN GREWE'
-        },{
-            img:'frontend/img/23.jpg',
-            title1:'THE TWO-DOLLAR BILL',
-            title2:'BY CHRISTIAN GREWE'
-        },{
-            img:'frontend/img/84.jpg',
-            title1:'ONE PEBBLE AT A TIME',
-            title2:'BY CHRISTIAN GREWE'
-        },{
-            img:'frontend/img/67.jpg',
-            title1:'THE EARTH BELOW',
-            title2:'BY CHRISTIAN GREWE'
-        },{
-            img:'frontend/img/23.jpg',
-            title1:'THE TWO-DOLLAR BILL',
-            title2:'BY CHRISTIAN GREWE'
-        },{
-            img:'frontend/img/84.jpg',
-            title1:'ONE PEBBLE AT A TIME',
-            title2:'BY CHRISTIAN GREWE'
+        $scope.inspireImg = [{
+            img: 'frontend/img/67.jpg',
+            title1: 'THE EARTH BELOW',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/23.jpg',
+            title1: 'THE TWO-DOLLAR BILL',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/84.jpg',
+            title1: 'ONE PEBBLE AT A TIME',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/67.jpg',
+            title1: 'THE EARTH BELOW',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/23.jpg',
+            title1: 'THE TWO-DOLLAR BILL',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/84.jpg',
+            title1: 'ONE PEBBLE AT A TIME',
+            title2: 'BY CHRISTIAN GREWE'
         }]
         // $scope.inspireSlide=_.chunk($scope.inspireImg,3);
 
@@ -131,21 +156,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.formSubmitted = false;
-         $scope.galleryImg = [
-           'frontend/img/videogallery/img-1.jpg',
-           'frontend/img/videogallery/img-2.jpg',
-           'frontend/img/videogallery/img-3.jpg',
-           'frontend/img/videogallery/img-4.jpg',
-           'frontend/img/videogallery/img-5.jpg',
-           'frontend/img/videogallery/img-6.jpg',
-           'frontend/img/videogallery/img-7.jpg',
-           'frontend/img/videogallery/img-8.jpg',
-           'frontend/img/videogallery/img-9.jpg',
-           'frontend/img/videogallery/img-10.jpg'
-       ]
-       
-       $scope.gallery = _.chunk($scope.galleryImg, 5);
-       console.log($scope.gallery);
+        $scope.galleryImg = [
+            'frontend/img/videogallery/img-1.jpg',
+            'frontend/img/videogallery/img-2.jpg',
+            'frontend/img/videogallery/img-3.jpg',
+            'frontend/img/videogallery/img-4.jpg',
+            'frontend/img/videogallery/img-5.jpg',
+            'frontend/img/videogallery/img-6.jpg',
+            'frontend/img/videogallery/img-7.jpg',
+            'frontend/img/videogallery/img-8.jpg',
+            'frontend/img/videogallery/img-9.jpg',
+            'frontend/img/videogallery/img-10.jpg'
+        ]
+        $scope.cast = [{
+            writtenBy: "shawn",
+            producedBy: "shawn",
+            cinemaAutographer: "shawn",
+            composer: "shawn",
+            colorist: "shawn",
+            producer: "shawn",
+            astDirector: "shawn",
+            makeup: "shawn",
+            astMakeup: "shawn",
+            musicSupervisor: "shawn",
+            editor: "shawn",
+            soundDesigner: "shawn",
+            titles: "shawn",
+            choregrapher: "shawn",
+            videoArt: "shawn",
+            stillPhtgrapher: "shawn",
+            productionDesigner: "shawn",
+            artDept: "shawn"
+        }];
+
+        $scope.gallery = _.chunk($scope.galleryImg, 5);
+        console.log($scope.gallery);
     })
 
     .controller('headerctrl', function ($scope, TemplateService) {
@@ -189,4 +234,4 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-    ;
+;

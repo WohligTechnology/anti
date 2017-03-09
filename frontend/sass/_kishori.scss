@@ -1,3 +1,16 @@
+.padd_lr {
+    // padding left & right
+    padding: 0 96px;
+}
+
+.padd_tb15 {
+    padding: 15px 0;
+}
+
+.padd_tp15 {
+    padding-top: 15px;
+}
+
 header {
     box-shadow: 0px 4px 19.11px 1.89px rgba(18, 9, 9, 0.32);
     width: 100%;
@@ -14,8 +27,6 @@ header {
         font-size: 19px;
         font-weight: 700;
         text-align: center;
-        font-family: YanoneKaffeesatz;
-        margin: 506px !important;
     }
     .border {
         font-family: YanoneKaffeesatz;
@@ -28,6 +39,9 @@ header {
 }
 
 .inspire-slider {
+    .flexslider .slides>li {
+        height: 424px !important;
+    }
     li {
         position: relative;
     }
@@ -39,17 +53,40 @@ header {
         transform: translate(-50%, -50%);
         z-index: 99;
     }
-    .flex-prev{
+    .flex-prev {
         display: none;
     }
-    .flex-next{
+    .flex-next {
         display: none;
+    }
+    .flex-control-nav {
+        width: 14%;
+        right: -24px;
+        bottom: -62px;
+        li:first-child {
+            a {
+                background-image: url("../img/polygon1.jpg");
+                width: 50px;
+                height: 50px;
+                border-radius: 0px;
+                background-position: center center;
+            }
+        }
+        li:last-child {
+            a {
+                background-image: url("../img/polygon2.jpg");
+                width: 50px;
+                height: 50px;
+                border-radius: 0px;
+                background-position: center center;
+            }
+        }
     }
 }
 
 p {
-    color: #e6e3e3 ;
-    font-size: 18px ;
+    color: #e6e3e3;
+    font-size: 18px;
     line-height: 29.167px;
     text-align: justify;
     font-family: 'proxima-R';
@@ -199,6 +236,11 @@ p {
     border: none;
 }
 
+.img-car {
+    margin-top: 12px;
+    cursor: pointer;
+}
+
 .img-car-position {
     position: relative;
 }
@@ -231,7 +273,7 @@ p {
 }
 
 .text {
-    margin-top: 62px;
+    // margin-top: 62px;
     .text-ul {
         margin-bottom: 62px;
     }
@@ -303,9 +345,20 @@ p {
     margin-top: 264px;
     li {
         padding: 5px;
-    }
-    a {
-        background-color: #7b716d !important;
+        a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #7b716d;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 35px;
+            .fa:before {
+                font-size: 20px;
+                color: #50403d;
+            }
+        }
     }
 }
 
@@ -324,83 +377,102 @@ p {
 
 // css for video 
 .inblock {
-   display: inline-block;
+    display: inline-block;
 }
 
 .video-gallery {
-   background-image: url(../img/bg2.jpg);
-   height: 100%;
-   background-repeat: no-repeat;
-   background-size: cover;
-   width: 100%;
-   background-position: center center;
-   .gallery-playimg {
-       margin-top: -56px;
-       position: relative;
-       .absolute-content {
-           position: absolute;
-           top: 50%;
-           left: 50%;
-           @include transform(translate(-50%,
-           -50%));
-           .inblock {
-               vertical-align: middle;
-               p {
-                   text-transform: uppercase;
-                   margin: 0;
-                   font-weight: bold;
-                   color: #fff;
-               }
-               .play__img {
-                   width: 40px;
-               }
-           }
-       }
-   }
+    background-image: url(../img/bg2.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-position: center center;
+    .gallery-playimg {
+        margin-top: -56px;
+        position: relative;
+        .absolute-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%,
+            -50%));
+            .inblock {
+                vertical-align: middle;
+                p {
+                    text-transform: uppercase;
+                    margin: 0;
+                    font-weight: bold;
+                    color: #fff;
+                }
+                .play__img {
+                    width: 40px;
+                }
+            }
+        }
+    }
 }
 
 .section1 {
-   .title-sec {
-       .venture-head {
-           font-weight: bold;
-           color: #fff;
-           text-transform: uppercase;
-           margin: 0;
-           font-family: 'proxima-EB';
-       }
-       .venture-name {
-           font-weight: bold;
-           text-transform: uppercase;
-           font-size: 14px;
-           color: #979797;
-       }
-       .social {
-           .fa {
-               color: #979797;
-           }
-       }
-   }
+    .title-sec {
+        .venture-head {
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            margin: 0;
+            font-family: 'proxima-EB';
+        }
+        .venture-name {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: #979797;
+        }
+        .social {
+            .fa {
+                color: #979797;
+            }
+        }
+    }
 }
 
 .section2 {
-   background-color: #1b2021;
-   .ul-tabs {
-       background-color: #161616;
-   }
+    background-color: #1b2021;
+    .ul-tabs {
+        background-color: #161616;
+    }
+    .list-inline {
+        li {
+            cursor: pointer;
+            padding: 15px 84px;
+            color: #d7d7d7;
+        }
+        li:hover {
+            color: white;
+        }
+    }
+    .list-group {
+        li {
+            list-style: none;
+            margin: 0 0 10px;
+            p {
+                margin: 0;
+                color: #d7d7d7;
+                text-transform: capitalize;
+                line-height: 1.5;
+            }
+        }
+    }
 }
 
 .marg0 {
-   margin: 0;
+    margin: 0;
 }
 
 .padd1 {
-   padding: 1px;
+    padding: 1px;
 }
 
 // END css for video gallery
 .middle {
-   vertical-align: middle;
+    vertical-align: middle;
 }
-
-
-
