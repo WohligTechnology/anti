@@ -26,7 +26,7 @@ module.exports = {
    ***************************************************************************/
 
   port: 89,
-  realHost: "http://antimatter.tingdom.in",
+  realHost: "antimatter.tingdom.in",
 
 
 
