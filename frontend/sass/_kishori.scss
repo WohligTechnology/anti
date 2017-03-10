@@ -41,58 +41,57 @@ header {
 
 .inspire-slider {
     .flexslider .slides>li {
-        .flexslider .slides>li {
-            height: 424px !important;
-        }
-        li {
-            position: relative;
-        }
-        .play {
-            width: 29px;
-            position: absolute;
-            top: 49%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 99;
-        }
-        .flex-prev {
-            display: none;
-        }
-        .flex-next {
-            display: none;
-        }
-        .flex-control-nav {
-            width: 14%;
-            right: -24px;
-            right: -24px;
-            bottom: -62px;
-            li:first-child {
-                a {
-                    background-image: url("../img/polygon1.jpg");
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 0px;
-                    background-position: center center;
-                }
+        height: 424px !important;
+    }
+    li {
+        position: relative;
+    }
+    .play {
+        width: 29px;
+        position: absolute;
+        top: 49%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+    }
+    .flex-prev {
+        display: none;
+    }
+    .flex-next {
+        display: none;
+    }
+    .flex-control-nav {
+        width: 14%;
+        right: -24px;
+        right: -24px;
+        bottom: -62px;
+        li:first-child {
+            a {
+                background-image: url("../img/polygon1.jpg");
+                width: 50px;
+                height: 50px;
+                border-radius: 0px;
+                background-position: center center;
             }
-            li:last-child {
-                a {
-                    background-image: url("../img/polygon2.jpg");
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 0px;
-                    background-position: center center;
-                }
+        }
+        li:last-child {
+            a {
+                background-image: url("../img/polygon2.jpg");
+                width: 50px;
+                height: 50px;
+                border-radius: 0px;
+                background-position: center center;
             }
         }
     }
-    p {
-        color: #e6e3e3;
-        font-size: 18px;
-        line-height: 29.167px;
-        text-align: justify;
-        font-family: 'proxima-R';
-    }
+}
+
+p {
+    color: #e6e3e3;
+    font-size: 18px;
+    line-height: 29.167px;
+    text-align: justify;
+    font-family: 'proxima-R';
 }
 
 .bg-color {
@@ -102,7 +101,7 @@ header {
 .fiction-background {
     background-image: url("../img/34.jpg");
     width: 100%;
-    height: 468px;
+    height: 500px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -141,10 +140,44 @@ header {
     }
 }
 
+.text-inspire-rel {
+    margin-top: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .inline-list {
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff !important;
+        font-family: YanoneKaffeesatz;
+        padding-right: 55px;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 34px;
+        transform: scaleY(1.0036);
+        letter-spacing: 5.5px;
+        li {
+            opacity: 1;
+        }
+        //    list-style-type: none;
+    }
+    .border-active {
+        width: 66px;
+        height: 3px;
+        /* color: grey; */
+        background: #ffffff;
+        margin: 10px auto;
+        /* display: none; */
+        visibility: hidden;
+    }
+}
+
 .text-released {
     margin-top: 12px;
     .inline-list {
         display: inline-block;
+        cursor: pointer;
         color: #ffffff !important;
         font-family: YanoneKaffeesatz;
         padding-right: 55px;
@@ -251,6 +284,7 @@ header {
 
 .img-car-position {
     position: relative;
+    margin-top: 6px;
 }
 
 .gradient {
@@ -309,34 +343,36 @@ header {
 // End Fiction css
 .background-brown {
     background-color: rgb(23, 19, 19);
-}
-
-.background-img {
-    background-image: url("../img/q.jpg");
-    //  
-    width: 100%;
-    height: 100%;
-    position: relative;
-    // background-position: 100% 0;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    // transform: translate(0 ,-13%);
-    p {
-        // mar
-        text-align: center;
-        vertical-align: middle;
-        // padding-left: 156px;
-        // padding-right: 50px;
-        // padding: 17px 0px;
-        font-weight: 300;
-        // line-height: 29.167px;
-        text-align: justify;
-    }
-    .background-para {
-        bottom: 19px;
-        position: absolute;
-        padding: 54px 0;
+    .background-img {
+        background-image: url("../img/q.jpg");
+        width: 100%;
+        height: 620px;
+        position: relative;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        p {
+            vertical-align: middle;
+            font-weight: 300;
+            text-align: justify;
+            line-height: 1.4;
+        }
+        .background-para {
+            bottom: 46px;
+            position: absolute;
+            padding: 54px 15px;
+        }
+        .social_icon {
+            position: absolute;
+            top: 42%;
+            right: 11px;
+            li {
+                margin-bottom: 10px;
+            }
+            a {
+                background-color: rgba(167, 165, 165, 0.75)!important;
+            }
+        }
     }
 }
 
@@ -349,10 +385,7 @@ header {
 }
 
 .social-share2 {
-    margin-right: 24px;
-    margin-top: 264px;
     li {
-        padding: 5px;
         a {
             display: inline-block;
             width: 30px;
@@ -367,18 +400,6 @@ header {
                 color: #50403d;
             }
         }
-    }
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #7b716d;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 35px;
-    .fa:before {
-        font-size: 20px;
-        color: #50403d;
     }
 }
 
@@ -416,6 +437,14 @@ header {
     .gallery-playimg {
         margin-top: -56px;
         position: relative;
+        .social_icon {
+            position: absolute;
+            top: 40%;
+            right: 15px;
+            li {
+                margin-bottom: 10px;
+            }
+        }
         .absolute-content {
             position: absolute;
             top: 50%;
@@ -439,6 +468,16 @@ header {
 }
 
 .section1 {
+    p {
+        color: #979797;
+        text-align: justify;
+        line-height: 1.2;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
     .title-sec {
         .venture-head {
             font-weight: bold;
@@ -456,6 +495,7 @@ header {
         .social {
             .fa {
                 color: #979797;
+                font-size: 30px;
             }
         }
     }
@@ -471,6 +511,7 @@ header {
             cursor: pointer;
             padding: 15px 84px;
             color: #d7d7d7;
+            border-bottom: 2px solid transparent;
         }
         li:hover {
             color: white;
@@ -484,8 +525,21 @@ header {
                 margin: 0;
                 color: #d7d7d7;
                 text-transform: capitalize;
-                line-height: 1.5;
+                line-height: 1.2;
             }
+        }
+    }
+    .border-active {
+        width: 100%;
+        height: 3px;
+        position: relative;
+        bottom: -16px;
+        background: #fc3e30;
+        visibility: hidden;
+    }
+    .visible-li {
+        .border-active {
+            visibility: visible;
         }
     }
 }
@@ -496,6 +550,15 @@ header {
 
 .padd1 {
     padding: 1px;
+}
+
+.section3 {
+    background-color: #1b2021;
+    padding-bottom: 25px;
+    h2 {
+        color: white;
+        letter-spacing: 2px;
+    }
 }
 
 // END css for video gallery

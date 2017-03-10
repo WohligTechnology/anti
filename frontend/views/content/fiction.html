@@ -45,9 +45,9 @@
         </ul>
     </div>
     <div class="container">
-        <div ng-show="viewDetail==1">
+        <div ng-if="viewDetail==1">
             <div class="row">
-                <div class="col-md-12 img-car ">
+                <div class="col-md-12 img-car" ui-sref="videogallery">
                     <div class="img-car-position">
                         <img src="frontend/img/22.jpg " alt="" class="image-responsive container-img2">
                         <div class="grad text-center">
@@ -66,7 +66,9 @@
                     max-items="3" item-width="350" item-margin="0">
                     <li>
                         <img ng-src="{{myslide.img}}" class="posi-rel">
-                        <div class="play"> <img src="frontend/img/26.png " alt=""></div>
+                        <div class="play">
+                            <img src="frontend/img/26.png " alt="">
+                        </div>
                         <div class="gradient text-center">
                             <h2>{{myslide.title1}}</h2>
                             <h5>{{myslide.title2}}</h5>
@@ -75,7 +77,8 @@
                 </flex-slider>
             </div>
         </div>
-        <div ng-show="viewDetail==2">
+
+        <div ng-if="viewDetail==2">
             <div class="row">
                 <div class="col-md-12 img-car " ui-sref="videogallery">
                     <div class="img-car-position">

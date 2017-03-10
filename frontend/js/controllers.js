@@ -40,7 +40,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 var scroll = $(window).scrollTop();
 
                 if (scroll >= 70) {
-                    console.log('amit');
+                    //alert('cool');
+                    console.log('siddhesh');
                     $(".fix-hidden").addClass("show-header");
                 } else {
                     $(".fix-hidden").removeClass("show-header");
@@ -196,6 +197,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.gallery = _.chunk($scope.galleryImg, 5);
         console.log($scope.gallery);
+        $scope.inspireImg1 = [{
+            img: 'frontend/img/67.jpg',
+            title1: 'THE EARTH BELOW',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/23.jpg',
+            title1: 'THE TWO-DOLLAR BILL',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/84.jpg',
+            title1: 'ONE PEBBLE AT A TIME',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/67.jpg',
+            title1: 'THE EARTH BELOW',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/23.jpg',
+            title1: 'THE TWO-DOLLAR BILL',
+            title2: 'BY CHRISTIAN GREWE'
+        }, {
+            img: 'frontend/img/84.jpg',
+            title1: 'ONE PEBBLE AT A TIME',
+            title2: 'BY CHRISTIAN GREWE'
+        }]
     })
 
     .controller('headerctrl', function ($scope, TemplateService) {

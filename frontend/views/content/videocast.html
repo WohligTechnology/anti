@@ -1,9 +1,221 @@
-<div class="vedio">
-    <div class="video-bgimg middle"">
-      <!--<div class="">
-         <img src="frontend/img/copy.png " alt="" class="image-responsive video-img  ">
-    </div>-->
+<div class="video-gallery">
+    <div class="container">
+        <div class="section1">
+            <div class="gallery-playimg">
+
+                <img src="frontend/img/copy.png" alt="" class="img-responsive">
+                <div class="absolute-content">
+                    <div class="inblock">
+                        <p>Watch</p>
+                    </div>
+                    <div class="inblock">
+                        <img src="frontend/img/videogallery/play.png" alt="" class="img-responsive play__img">
+                    </div>
+                    <div class="inblock">
+                        <p>now</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-push-1">
+                    <div class="title-sec">
+                        <h1 class="venture-head">Venture Out</h1>
+                        <p class="venture-name">by allan watts</p>
+                        <div class="social padd_tb15">
+                            <ul class="list-unstyled list-inline">
+                                <li>
+                                    <a href=""><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-link" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis optio facilis maxime id nobis numquam consequatur
+                                nisi culpa dignissimos tempora ratione praesentium sed quas tenetur, omnis odit nihil cum!
+                                Blanditiis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis optio
+                                facilis maxime id nobis numquam consequatur nisi culpa dignissimos tempora ratione praesentium
+                                sed quas tenetur, omnis odit nihil cum! Blanditiis!
+                            </p>
+                            <!--{{mygallery}}-->
+                            <p><a href="">view the story</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-       
-   
+</div>
+<div class="section2">
+    <div class="container">
+        <div class="cast">
+            <ul class="list-unstyled list-inline ul-tabs text-uppercase text-center" ng-init="viewDetail=1">
+                <li ng-click="viewDetail=1" ng-class="{'visible-li': viewDetail==1, '': viewDetail!==1}">cast &amp; crew
+                    <div class="border-active"></div>
+                </li>
+
+                <li ng-click="viewDetail=2" ng-class="{'visible-li': viewDetail==2, '': viewDetail!==2}">gallery
+                    <div class="border-active"></div>
+                </li>
+                <li ng-click="viewDetail=3" ng-class="{'visible-li': viewDetail==3, '': viewDetail!==3}">behind the scenes
+                    <div class="border-active"></div>
+                </li>
+                <li ng-click="viewDetail=4" ng-class="{'visible-li': viewDetail==4, '': viewDetail!==4}">social media
+                    <div class="border-active"></div>
+                </li>
+            </ul>
+
+            <div class="row padd_lr padd_tp15" ng-if="viewDetail==1">
+                <div class="col-md-3 ">
+                    <ul class="list-group">
+                        <li class="" ng-repeat="name in cast">
+                            <p>Written and Directed by</p>
+                            <p>{{name.writtenBy}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>Produced By</p>
+                            <p> {{name.producedBy}}</p>
+                            <p> {{name.producedBy}}</p>
+                            <p> {{name.producedBy}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>Cinema Autographer</p>
+                            <p> {{name.cinemaAutographer}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>composer</p>
+                            <p> {{name.composer}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>colorist / post</p>
+                            <p> {{name.colorist}}</p>
+                            <p> {{name.colorist}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-group">
+                        <li class="" ng-repeat="name in cast">
+                            <p>associate producer</p>
+                            <p> {{name.producer}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>assistant director</p>
+                            <p> {{name.astDirector}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>make-up</p>
+                            <p> {{name.makeup}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>assistant make-up</p>
+                            <p> {{name.astMakeup}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>music supervisor</p>
+                            <p> {{name.musicSupervisor}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-group">
+                        <li class="" ng-repeat="name in cast">
+                            <p>editor</p>
+                            <p> {{name.editor}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>editor</p>
+                            <p> {{name.editor}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>sound designer</p>
+                            <p> {{name.soundDesigner}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>titles</p>
+                            <p> {{name.titles}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>choreographer</p>
+                            <p> {{name.choregrapher}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-group">
+                        <li class="" ng-repeat="name in cast">
+                            <p>video art</p>
+                            <p> {{name.videoArt}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>still phographer</p>
+                            <p> {{name.stillPhtgrapher}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>production designers</p>
+                            <p> {{name.productionDesigner}}</p>
+                            <p> {{name.productionDesigner}}</p>
+                        </li>
+                        <li class="" ng-repeat="name in cast">
+                            <p>art department</p>
+                            <p>{{name.artDept}}</p>
+                            <p>{{name.artDept}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row marg0" ng-repeat="mygallery in gallery" ng-if="viewDetail==2">
+                <div class="col-md-2 col-md-push-1 padd1" ng-repeat="gall in mygallery">
+                    <img ng-src="{{gall}}" alt="" class="img-responsive">
+                </div>
+            </div>
+
+
+            <div ng-if="viewDetail==3">
+                <div class="row padd_tb15">
+                </div>
+            </div>
+
+
+            <div ng-if="viewDetail==4">
+                <div class="row  padd_tb15">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center text-uppercase yanone_font">
+                <h2>More in fiction</h2>
+            </div>
+        </div>
+        <div class="inspire-slider">
+            <flex-slider class="carousel" animation="slide" flex-slide="slider in inspireImg1 track by $index" prev-text="" next-text=""
+                max-items="3" item-width="350" item-margin="0">
+                <li>
+                    <img ng-src="{{slider.img}}" class="posi-rel">
+
+                    <div class="play">
+                        <img src="frontend/img/26.png " alt="">
+                    </div>
+                    <div class="gradient text-center">
+                        <h2>{{slider.title1}}</h2>
+                        <h5>{{slider.title2}}</h5>
+                    </div>
+                </li>
+            </flex-slider>
+        </div>
+    </div>
 </div>

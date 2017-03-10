@@ -1,7 +1,7 @@
-<div class="background-brown">
-    <div class="background-img ">
+<div class=" background-brown">
+    <div class=" container-fluid background-img ">
         <div class="row">
-            <div class="social_icon pull-right">
+            <div class="social_icon">
                 <ul class="list-unstyled  social-share2">
                     <li>
                         <a href="">
@@ -29,7 +29,7 @@
                 </p>
             </div>
         </div>
-        <div class="text-center text-released">
+        <div class="text-center text-inspire-rel">
             <ul ng-init="viewDetail=1">
                 <li class="inline-list " ng-click="viewDetail = 1;" ng-class="{' visible-li': viewDetail==1, '': viewDetail!==1}">RELEASED
                     <div class="border-active"> </div>
@@ -41,10 +41,10 @@
         </div>
     </div>
     <div class="container">
-        <div ng-show="viewDetail==1">
+        <div ng-if="viewDetail==1">
             <div class="row">
                 <div class="col-md-12  ">
-                    <div class="img-car-position">
+                    <div class="img-car-position" ui-sref="videogallery">
                         <img src="frontend/img/22.jpg " alt="" class="image-responsive container-img2">
                         <div class="grad text-center">
                             <div> <img src="frontend/img/26.png " alt=""></div>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-         
+
             <div class="inspire-slider">
                 <flex-slider class="carousel" animation="slide" flex-slide="myslide in inspireImg track by $index" prev-text="" next-text=""
                     max-items="3" item-width="350" item-margin="0">
@@ -70,12 +70,12 @@
                     </li>
                 </flex-slider>
             </div>
-           
+
         </div>
-        <div ng-show="viewDetail==2">
-              <div class="row">
+        <div ng-if="viewDetail==2">
+            <div class="row">
                 <div class="col-md-12  ">
-                    <div class="img-car-position">
+                    <div class="img-car-position" ui-sref="videogallery">
                         <img src="frontend/img/22.jpg " alt="" class="image-responsive container-img2">
                         <div class="grad text-center">
                             <div> <img src="frontend/img/26.png " alt=""></div>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-         
+
             <div class="inspire-slider">
                 <flex-slider class="carousel" animation="slide" flex-slide="myslide in inspireImg track by $index" prev-text="" next-text=""
                     max-items="3" item-width="350" item-margin="0">
@@ -101,22 +101,22 @@
                     </li>
                 </flex-slider>
             </div>
-          
-         
+
+
         </div>
-           <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center text">
-                        <p>ALSO VIEW STORIES FROM:</p>
-                        <div class="text-ul">
-                            <ul>
-                                <li class="inline-list2">INSPIRE </li>
-                                <li class="inline-list2">LIBERATE </li>
-                                <li class="inline-list2">CONFESSION </li>
-                            </ul>
-                        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center text">
+                    <p>ALSO VIEW STORIES FROM:</p>
+                    <div class="text-ul">
+                        <ul>
+                            <li class="inline-list2">INSPIRE </li>
+                            <li class="inline-list2">LIBERATE </li>
+                            <li class="inline-list2">CONFESSION </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 </div>
