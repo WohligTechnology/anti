@@ -240,6 +240,9 @@ footer {
         }
     }
     .copy_right {
+        a {
+            color: white;
+        }
         padding: 28px 0;
         p {
             margin-bottom: 0;
@@ -314,7 +317,9 @@ footer {
 
 .navbar-default {
     @extend .yanone_font;
-    background-color: transparent;
+    // background-color: transparent;
+    background-color: black;
+    height: 116px;
     border: none;
     .navbar-nav {
         float: none;
@@ -520,19 +525,21 @@ img.min_h {
 .fix-hidden {
     background-color: black;
     .logo-ma {
-        display: none;
+        display: block;
+        margin-top: 15px;
     }
     .search-ma {
         display: none;
     }
 }
 
-.fix-hidden.show-header {
-    .logo-ma {
-        display: block;
-    }
-}
-
+// .fix-hidden.show-header {
+//     .logo-ma {
+//         display: block;
+//         background-color: black;
+//         margin-top: 15px;
+//     }
+// }
 // .show-header {
 // .fix-hidden {
 //     .bg-white{
