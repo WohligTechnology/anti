@@ -70,6 +70,12 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         controller: 'SchemaCreatorCtrl'
     })
 
+    .state('excel-upload', {
+        url: "/excel-upload/:model",
+        templateUrl: "views/template.html",
+        controller: 'ExcelUploadCtrl'
+    })
+
     .state('jagz', {
         url: "/jagz",
         templateUrl: "views/jagz.html",
@@ -81,6 +87,21 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
 });
 
 
+firstapp.directive('dateModel', function ($filter, $timeout) {
+    return {
+        scope: {
+            model: '=ngModel'
+        },
+        link: function ($scope, element, attrs) {
+            console.log("in date model");
+            $timeout(function () {
+                console.log($filter('date')(new Date($scope.model), 'dd/MM/yyyy'));
+                $scope.model = new Date($scope.model);
+            }, 100)
+
+        }
+    };
+});
 
 firstapp.filter('uploadpath', function () {
     return function (input, width, height, style) {
@@ -122,20 +143,22 @@ firstapp.directive('imageonload', function () {
 });
 
 
-firstapp.directive('uploadImage', function ($http, $filter) {
+firstapp.directive('uploadImage', function ($http, $filter, $timeout) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
         scope: {
             model: '=ngModel',
-            callback: "=ngCallback"
+            type: "@type",
+            callback: "&ngCallback"
         },
         link: function ($scope, element, attrs) {
-
+            console.log($scope.model);
             $scope.showImage = function () {
-                console.log($scope.image);
             };
-
-
+            $scope.check = true;
+            if (!$scope.type) {
+                $scope.type = "image";
+            }
             $scope.isMultiple = false;
             $scope.inObject = false;
             if (attrs.multiple || attrs.multiple === "") {
@@ -145,10 +168,29 @@ firstapp.directive('uploadImage', function ($http, $filter) {
             if (attrs.noView || attrs.noView === "") {
                 $scope.noShow = true;
             }
+            // if (attrs.required) {
+            //     $scope.required = true;
+            // } else {
+            //     $scope.required = false;
+            // }
 
             $scope.$watch("image", function (newVal, oldVal) {
-                if (newVal && newVal.file) {
+                console.log(newVal, oldVal);
+                isArr = _.isArray(newVal);
+                if (!isArr && newVal && newVal.file) {
                     $scope.uploadNow(newVal);
+                } else if (isArr && newVal.length > 0 && newVal[0].file) {
+
+                    $timeout(function () {
+                        console.log(oldVal, newVal);
+                        console.log(newVal.length);
+                        _.each(newVal, function (newV, key) {
+                            if (newV && newV.file) {
+                                $scope.uploadNow(newV);
+                            }
+                        });
+                    }, 100);
+
                 }
             });
 
@@ -160,6 +202,10 @@ firstapp.directive('uploadImage', function ($http, $filter) {
                             url: n
                         });
                     });
+                } else {
+                    if (_.endsWith($scope.model, ".pdf")) {
+                        $scope.type = "pdf";
+                    }
                 }
 
             }
@@ -181,28 +227,40 @@ firstapp.directive('uploadImage', function ($http, $filter) {
                         'Content-Type': undefined
                     },
                     transformRequest: angular.identity
-                }).success(function (data) {
-                    if ($scope.callback) {
-                        $scope.callback(data);
-                    } else {
-                        $scope.uploadStatus = "uploaded";
-                        if ($scope.isMultiple) {
-                            if ($scope.inObject) {
-                                $scope.model.push({
-                                    "image": data.data[0]
-                                });
-                            } else {
-                                $scope.model.push(data.data[0]);
-                            }
+                }).then(function (data) {
+                    data = data.data;
+                    $scope.uploadStatus = "uploaded";
+                    if ($scope.isMultiple) {
+                        if ($scope.inObject) {
+                            $scope.model.push({
+                                "image": data[0]
+                            });
                         } else {
-                            $scope.model = data.data[0];
+                            if (!$scope.model) {
+                                $scope.clearOld();
+                            }
+                            $scope.model.push(data[0]);
                         }
+                    } else {
+                        if (_.endsWith(data.data[0], ".pdf")) {
+                            $scope.type = "pdf";
+                        } else {
+                            $scope.type = "image";
+                        }
+                        $scope.model = data.data[0];
+                        console.log($scope.model,'model means blob')
+
                     }
+                    $timeout(function () {
+                        $scope.callback();
+                    }, 100);
+
                 });
             };
         }
     };
 });
+
 
 
 firstapp.directive('onlyDigits', function () {
@@ -348,7 +406,7 @@ firstapp.filter('serverimage', function () {
             }
 
         } else {
-            return "frontend/img/logo.png";
+            return "img/logo.png";
         }
     };
 });
@@ -364,7 +422,7 @@ firstapp.filter('downloadImage', function () {
         if (input) {
             return adminurl + "download/" + input;
         } else {
-            return "frontend/img/logo.png";
+            return "img/logo.png";
         }
     };
 });
@@ -496,6 +554,7 @@ firstapp.directive('multipleSelect', function ($document, $timeout) {
             filter: "@filter",
             ngName: "=ngName",
             create: "@ngCreate",
+            disabled: "=ngDisabled"
 
         },
         restrict: 'EA',
@@ -649,5 +708,11 @@ firstapp.directive('detailField', function ($http, $filter, JsonService) {
         link: function ($scope, element, attrs) {
 
         }
+    };
+});
+
+firstapp.filter('urlencoder', function () {
+    return function (input) {
+        return window.encodeURIComponent(input);
     };
 });

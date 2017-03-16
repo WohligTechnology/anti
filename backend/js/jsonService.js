@@ -13,7 +13,8 @@ jsonservicemod.service('JsonService', function ($http, TemplateService, $state, 
     }
   };
   this.getJson = function (page, callback) {
-    $http.get("pageJson/" + page + ".json").success(function (data) {
+    $http.get("pageJson/" + page + ".json").then(function (data) {
+      data = data.data;
       JsonService.json = data;
       switch (data.pageType) {
         case "view":
@@ -80,6 +81,14 @@ jsonservicemod.service('JsonService', function ($http, TemplateService, $state, 
       globalfunction.openModal(function (data) {
         console.log(data);
       });
+    } else if (action.type == "redirect") {
+      if (action.linkType == "admin") {
+        window.location.href = adminurl + action.action;
+      } else if (action.linkType == "internal") {
+        window.location.href = "#/" + action.action;
+      } else {
+        window.location.href = action.action;
+      }
     } else {
       if (value && action && action.fieldsToSend) {
         var keyword = {};

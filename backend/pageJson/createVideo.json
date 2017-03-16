@@ -1,0 +1,95 @@
+{
+  "title": "Create Video",
+  "name": "Video",
+  "jsonPage": "viewVideo",
+  "desciption": "",
+  "pageType": "create",
+  "urlFields": ["Video"],
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Category",
+        "type": "selectFromTable",
+        "tableRef": "category",
+        "searchApi": "searchCall",
+        "placeholder": "Enter Category",
+        "id": "category",
+        "url": "Categories/search"
+    }, {
+        "name": "Title",
+        "isSort": "",
+        "tableRef": "title"
+    },{
+        "name": "Author",
+        "isSort": "",
+        "tableRef": "author"
+    },{
+        "name": "Tagline",
+        "isSort": "",
+        "tableRef": "tagline"
+    },{
+        "name": "Video",
+        "isSort": "",
+        "tableRef": "video"
+    },{
+        "name": "IsUpcoming",
+        "isSort": "",
+        "tableRef": "isUpcoming"
+    },{
+        "name": "isReleased",
+        "isSort": "",
+        "tableRef": "isReleased"
+    },{
+        "name": "description",
+        "isSort": "",
+        "tableRef": "description"
+    },{
+        "name": "urlSlug",
+        "isSort": "",
+        "tableRef": "urlSlug"
+    },{
+        "name": "movieHashtag",
+        "isSort": "",
+        "tableRef": "movieHashtag"
+    },{
+        "name": "castBlock1",
+        "isSort": "",
+        "tableRef": "castBlock1"
+    },{
+        "name": "castBlock2",
+        "isSort": "",
+        "tableRef": "castBlock2"
+    },{
+        "name": "castBlock3",
+        "isSort": "",
+        "tableRef": "castBlock3"
+    },{
+        "name": "castBlock4",
+        "isSort": "",
+        "tableRef": "castBlock4"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitVideo",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewVideo"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewVideo"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Videos/save"
+    }
+}

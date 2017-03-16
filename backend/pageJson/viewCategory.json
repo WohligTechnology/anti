@@ -1,6 +1,6 @@
 {
-    "title": "Demo1",
-    "description": "List of Demo1s",
+    "title": "Category",
+    "description": "List of Category",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
@@ -8,13 +8,22 @@
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
-    }],
+    }, {
+        "name": "Description",
+        "isSort": "",
+        "tableRef": "description"
+    }, {
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }
+    ],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editDemo1",
+        "action": "editCategory",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -23,35 +32,23 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Demo1",
-        "content": "Are you sure you want to delete Demo1?",
-        "api": "demo1/delete",
+        "title": "Delete Category",
+        "content": "Are you sure you want to delete Category?",
+        "api": "Categories/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
         }
     }],
     "button": [{
-        "name": "Excel Export",
-        "icon": "print",
-        "class": "btn-danger",
-        "type": "redirect",
-        "action": "excelexport"
-    }, {
-        "name": "Upload Excel",
-        "icon": "delete",
-        "class": "btn-warning",
-        "type": "redirect",
-        "action": "uploadcsv"
-    }, {
         "name": "Create",
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createDemo1"
+        "action": "createCategory"
     }],
     "apiCall": {
-        "url": "Demo1/search",
+        "url": "Categories/search",
         "params": "_id"
     }
 }

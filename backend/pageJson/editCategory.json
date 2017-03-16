@@ -1,0 +1,79 @@
+{
+    "title": "Edit Category",
+    "name": "Category",
+    "jsonPage": "viewCategory",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Description",
+        "isSort": "",
+        "tableRef": "description"
+    }, {
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    },{
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
+    },{
+        "name": "HomePage Image",
+        "type": "image",
+        "tableRef": "homeImage",
+        "option": "single",
+        "size": "1500 x 329px",
+        "placeholder": "Enter imageThumb",
+        "id": "homeImage",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },
+    {
+        "name": "background Image",
+        "type": "image",
+        "tableRef": "background",
+        "option": "single",
+        "size": "1080 x 1920px",
+        "placeholder": "Enter background image",
+        "id": "background",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },
+    {
+        "name": "Url",
+        "isSort": "",
+        "tableRef": "urlSlug"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitCategory",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCategory"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCategory"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Categories/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Categories/getOne",
+        "params": "_id"
+    }
+
+}

@@ -21,7 +21,7 @@ var Schema = mongoose.Schema;
 
 var schema = new Schema({
     name: String,
-    content: String,
+    content: String
 });
 //
 // var client = new Twitter({

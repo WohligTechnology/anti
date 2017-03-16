@@ -1,0 +1,50 @@
+{
+    "title": "Subscription",
+    "description": "List of Subscription",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Email",
+        "isSort": "",
+        "tableRef": "email"
+    }, {
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }
+    ],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editSubscription",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Subscription",
+        "content": "Are you sure you want to delete Subscription?",
+        "api": "Subscriptions/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createSubscription"
+    }],
+    "apiCall": {
+        "url": "Subscriptions/search",
+        "params": "_id"
+    }
+}

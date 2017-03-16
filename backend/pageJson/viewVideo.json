@@ -1,6 +1,6 @@
 {
-    "title": "Demo2",
-    "description": "List of Demo2s",
+    "title": "Video",
+    "description": "List of Video",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
@@ -8,13 +8,26 @@
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
-    }],
+    }, {
+        "name": "Title",
+        "isSort": "",
+        "tableRef": "title"
+    },{
+        "name": "Author",
+        "isSort": "",
+        "tableRef": "author"
+    },{
+        "name": "Tagline",
+        "isSort": "",
+        "tableRef": "tagline"
+    }
+    ],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editDemo2",
+        "action": "editVideos",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -23,35 +36,23 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Demo2",
-        "content": "Are you sure you want to delete Demo2?",
-        "api": "demo2/delete",
+        "title": "Delete Videos",
+        "content": "Are you sure you want to delete Videos?",
+        "api": "Videos/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
         }
     }],
     "button": [{
-        "name": "Excel Export",
-        "icon": "print",
-        "class": "btn-danger",
-        "type": "redirect",
-        "action": "excelexport"
-    }, {
-        "name": "Upload Excel",
-        "icon": "delete",
-        "class": "btn-warning",
-        "type": "redirect",
-        "action": "uploadcsv"
-    }, {
         "name": "Create",
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createDemo2"
+        "action": "createVideo"
     }],
     "apiCall": {
-        "url": "Demo2/search",
+        "url": "Videos/search",
         "params": "_id"
     }
 }

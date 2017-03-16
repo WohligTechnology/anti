@@ -1,0 +1,39 @@
+{
+  "title": "Create Category",
+  "name": "Category",
+  "jsonPage": "viewSubscription",
+  "desciption": "",
+  "pageType": "create",
+  "urlFields": ["Subscription"],
+    "fields": [{
+        "name": "Email",
+        "isSort": "",
+        "tableRef": "email"
+    }, {
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitSubscription",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSubscription"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSubscription"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Subscriptions/save"
+    }
+}

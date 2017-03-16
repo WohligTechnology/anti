@@ -25,8 +25,10 @@ module.exports = {
    * Set the port in the production environment to 80                        *
    ***************************************************************************/
 
-  port: 89,
-  realHost: "http://antimatter.tingdom.in/",
+  port: 1337,
+  realHost: "http://wohlig.io",
+  emails: ["chintan@wohlig.com", "supriya.bhartiya@wohlig.com","ashish.zanwar@wohlig.com", "jagruti@wohlig.com", "tushar@wohlig.com", "chirag@wohlig.com", "harsh@wohlig.com", "pratikg17.wohlig@gmail.com", "sohan@wohlig.com", "pratik.gawand@wohlig.com"]
+
 
 
 

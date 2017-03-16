@@ -1,0 +1,71 @@
+{
+  "title": "Create Category",
+  "name": "Category",
+  "jsonPage": "viewCategory",
+  "desciption": "",
+  "pageType": "create",
+  "urlFields": ["Category"],
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Description",
+        "isSort": "",
+        "tableRef": "description"
+    }, {
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    },{
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
+    },{
+        "name": "HomePage Image",
+        "type": "image",
+        "tableRef": "homeImage",
+        "option": "single",
+        "placeholder": "Enter imageThumb",
+        "id": "homeImage",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },
+    {
+        "name": "background Image",
+        "type": "image",
+        "tableRef": "background",
+        "option": "single",
+        "placeholder": "Enter background image",
+        "id": "background",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },
+    {
+        "name": "Url",
+        "isSort": "",
+        "tableRef": "urlSlug"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitCategory",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCategory"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCategory"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Categories/save"
+    }
+}
