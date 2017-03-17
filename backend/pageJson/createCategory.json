@@ -45,7 +45,8 @@
         "name": "Url",
         "isSort": "",
         "tableRef": "urlSlug"
-    }],
+    }
+    ],
     "action": [{
         "name": "submit",
         "action": "submitCategory",

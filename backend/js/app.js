@@ -35,6 +35,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
         templateUrl: "views/template.html",
         controller: 'PageJsonCtrl'
     })
+    .state('videopage', {
+            url: "/page/:id/{page:.*}/{keyword:.*}",
+            templateUrl: "views/template.html",
+            controller: 'VideoDetailCtrl'
+        })
 
     .state('loginapp', {
         url: "/login/:id",

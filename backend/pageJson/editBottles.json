@@ -1,0 +1,77 @@
+{
+    "title": "Edit PET Bottles",
+    "name": "Bottles",
+    "jsonPage": "viewBottles",
+    "desciption": "",
+    "pageType": "Bottlesedit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Select",
+        "type": "tags",
+        "tableRef": "pselect",
+        "placeholder": "Select",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "dropDown": ["Flexible", "Rigid"]
+    },  {
+        "name": "Content",
+        "type": "wysiwyg",
+        "tableRef": "content",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Desktop Image(1500 x 329px)",
+        "type": "image",
+        "tableRef": "desktopimage",
+        "option": "single",
+        "size": "1500 x 329px",
+        "placeholder": "Enter Desktop Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Mobile Image(1080 x 1920px)",
+        "type": "image",
+        "tableRef": "mobileimage",
+        "option": "single",
+        "size": "1080 x 1920px",
+        "placeholder": "Enter Mobile Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitBottles",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBottles"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBottles"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Bottles/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Bottles/getOne",
+        "params": "_id"
+    }
+
+
+}

@@ -3,8 +3,8 @@
     "name": "Video",
     "jsonPage": "viewVideo",
     "desciption": "",
-    "pageType": "edit",
-    "urlFields": ["_id"],
+    "pageType": "videoedit",
+    "urlFields": ["Video"],
     "fields": [{
         "name": "Name",
         "isSort": "",
@@ -54,21 +54,41 @@
         "isSort": "",
         "tableRef": "movieHashtag"
     },{
-        "name": "castBlock1",
+        "name": "Cast&Crew Section 1",
         "isSort": "",
-        "tableRef": "castBlock1"
+        "tableRef": "castBlock1",
+        "type": "wysiwyg",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
     },{
-        "name": "castBlock2",
+        "name": "Cast&Crew Section 2",
         "isSort": "",
-        "tableRef": "castBlock2"
+        "tableRef": "castBlock2",
+        "type": "wysiwyg",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
     },{
-        "name": "castBlock3",
+        "name": "Cast&Crew Section 3",
         "isSort": "",
-        "tableRef": "castBlock3"
+        "tableRef": "castBlock3",
+        "type": "wysiwyg",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
     },{
-        "name": "castBlock4",
+        "name": "Cast&Crew Section 4",
         "isSort": "",
-        "tableRef": "castBlock4"
+        "tableRef": "castBlock4",
+        "type": "wysiwyg",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
     }],
     "action": [{
         "name": "submit",

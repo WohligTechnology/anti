@@ -13,10 +13,12 @@
         "name": "Category",
         "type": "selectFromTable",
         "tableRef": "category",
+        "dropDownType": "single",
         "searchApi": "searchCall",
         "placeholder": "Enter Category",
-        "id": "category",
-        "url": "Categories/search"
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": "Categories/search" 
     }, {
         "name": "Title",
         "isSort": "",
@@ -30,17 +32,33 @@
         "isSort": "",
         "tableRef": "tagline"
     },{
-        "name": "Video",
-        "isSort": "",
-        "tableRef": "video"
+        "name": "Video Url",
+        "type": "text",
+        "tableRef": "video",
+        "placeholder": "Enter URL",
+        "id": "input1",
+        "validation": ["", "trim", "unique"],
+        "url": ""
     },{
         "name": "IsUpcoming",
         "isSort": "",
-        "tableRef": "isUpcoming"
+        "tableRef": "isUpcoming",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["True", "False"]
     },{
         "name": "isReleased",
         "isSort": "",
-        "tableRef": "isReleased"
+        "tableRef": "isReleased",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["True", "False"]
     },{
         "name": "description",
         "isSort": "",
@@ -54,21 +72,41 @@
         "isSort": "",
         "tableRef": "movieHashtag"
     },{
-        "name": "castBlock1",
+        "name": "Cast&Crew Section 1",
         "isSort": "",
-        "tableRef": "castBlock1"
+        "tableRef": "castBlock1",
+        "type": "wysiwyg",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
     },{
-        "name": "castBlock2",
+        "name": "Cast&Crew Section 2",
         "isSort": "",
-        "tableRef": "castBlock2"
+        "tableRef": "castBlock2",
+        "type": "wysiwyg",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
     },{
-        "name": "castBlock3",
+        "name": "Cast&Crew Section 3",
         "isSort": "",
-        "tableRef": "castBlock3"
+        "tableRef": "castBlock3",
+        "type": "wysiwyg",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
     },{
-        "name": "castBlock4",
+        "name": "Cast&Crew Section 4",
         "isSort": "",
-        "tableRef": "castBlock4"
+        "tableRef": "castBlock4",
+        "type": "wysiwyg",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
     }],
     "action": [{
         "name": "submit",

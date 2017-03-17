@@ -13,14 +13,26 @@ var navigationservice = angular.module('navigationservice', [])
         sref: "#!/page/viewCategory//",
         icon: "phone"
     },{
+        name: "HomeScreen",
+        classis: "active",
+        sref: "#!/page/viewHome//",
+        icon: "phone"
+    },{
         name: "Subscription",
         classis: "active",
         sref: "#!/page/viewSubscription//",
         icon: "phone"
-    },{
+    },   
+    {
         name: "Video",
         classis: "active",
         sref: "#!/page/viewVideo//",
+        icon: "phone"
+    },
+    {
+        name: "Config",
+        classis: "active",
+        sref: "#!/page/viewConfig//",
         icon: "phone"
     }
     ];
@@ -91,6 +103,13 @@ var navigationservice = angular.module('navigationservice', [])
 
             });
         },
+        boxCall: function (url, formData, callback) {
+                $http.post(adminurl + url, formData).then(function (data) {
+                    data = data.data;
+                    callback(data);
+
+                });
+            },
         searchCall: function (url, formData, i, callback) {
             $http.post(adminurl + url, formData).then(function (data) {
                 data = data.data;

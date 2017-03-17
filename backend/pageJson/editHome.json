@@ -1,0 +1,49 @@
+{
+    "title": "Edit Home",
+    "name": "Home Screen",
+    "jsonPage": "viewHome",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Home Video",
+        "isSort": "",
+        "tableRef": "video"
+    }, {
+        "name": "Category",
+        "type": "selectFromTable",
+        "tableRef": "category",
+        "searchApi": "searchCall",
+        "placeholder": "Enter Category",
+        "id": "category",
+        "url": "Categories/search"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitHome",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewHome"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewHome"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "HomeScreen/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "HomeScreen/getOne",
+        "params": "_id"
+    }
+
+}

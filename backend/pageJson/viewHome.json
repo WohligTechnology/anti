@@ -1,25 +1,13 @@
 {
-    "title": "Video",
-    "description": "List of Video",
+    "title": " View Home",
+    "description": "List of Home",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Name",
+        "name": "Home Video",
         "isSort": "",
-        "tableRef": "name"
-    }, {
-        "name": "Title",
-        "isSort": "",
-        "tableRef": "title"
-    },{
-        "name": "Author",
-        "isSort": "",
-        "tableRef": "author"
-    },{
-        "name": "Tagline",
-        "isSort": "",
-        "tableRef": "tagline"
+        "tableRef": "video"
     }
     ],
     "action": [{
@@ -27,7 +15,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editVideo",
+        "action": "editHome",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -36,9 +24,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Videos",
-        "content": "Are you sure you want to delete Videos?",
-        "api": "Videos/delete",
+        "title": "Delete Home",
+        "content": "Are you sure you want to delete Category?",
+        "api": "HomeScreen/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -49,10 +37,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createVideo"
+        "action": "createHome"
     }],
     "apiCall": {
-        "url": "Videos/search",
+        "url": "HomeScreen/search",
         "params": "_id"
     }
 }

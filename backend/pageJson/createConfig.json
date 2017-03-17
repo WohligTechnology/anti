@@ -1,26 +1,26 @@
 {
-  "title": "Create Category",
-  "name": "Category",
-  "jsonPage": "viewSubscription",
+  "title": "Create Config",
+  "name": "Config",
+  "jsonPage": "viewConfig",
   "desciption": "",
   "pageType": "create",
-  "urlFields": ["Subscription"],
+  "urlFields": ["Config"],
     "fields": [{
-        "name": "Email",
+        "name": "Name",
         "isSort": "",
-        "tableRef": "email"
+        "tableRef": "name"
     }, {
-        "name": "Status",
+        "name": "Content",
         "isSort": "",
-        "tableRef": "status"
+        "tableRef": "content"
     }],
     "action": [{
         "name": "submit",
-        "action": "submitSubscription",
+        "action": "submitConfig",
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewSubscription"
+                "id": "viewConfig"
             }
         }
     }, {
@@ -29,11 +29,11 @@
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewSubscription"
+                "id": "viewConfig"
             }
         }
     }],
     "apiCall": {
-        "url": "Subscriptions/save"
+        "url": "Config/save"
     }
 }

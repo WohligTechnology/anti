@@ -1,6 +1,6 @@
 {
-    "title": "Video",
-    "description": "List of Video",
+    "title": "Config",
+    "description": "List of Config",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
@@ -9,17 +9,9 @@
         "isSort": "",
         "tableRef": "name"
     }, {
-        "name": "Title",
+        "name": "Content",
         "isSort": "",
-        "tableRef": "title"
-    },{
-        "name": "Author",
-        "isSort": "",
-        "tableRef": "author"
-    },{
-        "name": "Tagline",
-        "isSort": "",
-        "tableRef": "tagline"
+        "tableRef": "content"
     }
     ],
     "action": [{
@@ -27,7 +19,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editVideo",
+        "action": "editConfig",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -36,9 +28,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Videos",
-        "content": "Are you sure you want to delete Videos?",
-        "api": "Videos/delete",
+        "title": "Delete Config",
+        "content": "Are you sure you want to delete Config?",
+        "api": "Config/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -49,10 +41,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createVideo"
+        "action": "createConfig"
     }],
     "apiCall": {
-        "url": "Videos/search",
+        "url": "Config/search",
         "params": "_id"
     }
 }
