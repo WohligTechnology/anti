@@ -6,90 +6,117 @@
     "pageType": "videoedit",
     "urlFields": ["Video"],
     "fields": [{
-        "name": "Name",
-        "isSort": "",
-        "tableRef": "name"
-    }, {
-        "name": "Category",
-        "type": "selectFromTable",
-        "tableRef": "category",
-        "searchApi": "searchCall",
-        "placeholder": "Enter Category",
-        "id": "category",
-        "url": "Categories/search"
-    }, {
-        "name": "Title",
-        "isSort": "",
-        "tableRef": "title"
-    },{
-        "name": "Author",
-        "isSort": "",
-        "tableRef": "author"
-    },{
-        "name": "Tagline",
-        "isSort": "",
-        "tableRef": "tagline"
-    },{
-        "name": "Video",
-        "isSort": "",
-        "tableRef": "video"
-    },{
-        "name": "IsUpcoming",
-        "isSort": "",
-        "tableRef": "isUpcoming"
-    },{
-        "name": "isReleased",
-        "isSort": "",
-        "tableRef": "isReleased"
-    },{
-        "name": "description",
-        "isSort": "",
-        "tableRef": "description"
-    },{
-        "name": "urlSlug",
-        "isSort": "",
-        "tableRef": "urlSlug"
-    },{
-        "name": "movieHashtag",
-        "isSort": "",
-        "tableRef": "movieHashtag"
-    },{
-        "name": "Cast&Crew Section 1",
-        "isSort": "",
-        "tableRef": "castBlock1",
-        "type": "wysiwyg",
-        "placeholder": "Enter name",
-        "id": "input1",
-        "validation": ["", "trim", ""],
-        "url": ""
-    },{
-        "name": "Cast&Crew Section 2",
-        "isSort": "",
-        "tableRef": "castBlock2",
-        "type": "wysiwyg",
-        "placeholder": "Enter name",
-        "id": "input1",
-        "validation": ["", "trim", ""],
-        "url": ""
-    },{
-        "name": "Cast&Crew Section 3",
-        "isSort": "",
-        "tableRef": "castBlock3",
-        "type": "wysiwyg",
-        "placeholder": "Enter name",
-        "id": "input1",
-        "validation": ["", "trim", ""],
-        "url": ""
-    },{
-        "name": "Cast&Crew Section 4",
-        "isSort": "",
-        "tableRef": "castBlock4",
-        "type": "wysiwyg",
-        "placeholder": "Enter name",
-        "id": "input1",
-        "validation": ["", "trim", ""],
-        "url": ""
-    }],
+            "name": "Name",
+            "isSort": "",
+            "tableRef": "name"
+        }, {
+            "name": "Category",
+            "type": "selectFromTable",
+            "tableRef": "category",
+            "searchApi": "searchCall",
+            "placeholder": "Enter Category",
+            "id": "category",
+            "url": "Categories/search"
+        }, {
+            "name": "Title",
+            "isSort": "",
+            "tableRef": "title"
+        }, {
+            "name": "Author",
+            "isSort": "",
+            "tableRef": "author"
+        }, {
+            "name": "Tagline",
+            "isSort": "",
+            "tableRef": "tagline"
+        }, {
+            "name": "Video",
+            "isSort": "",
+            "tableRef": "video"
+        },
+        {
+            "name": "Thumb Image",
+            "type": "image",
+            "tableRef": "thumbImage",
+            "option": "single",
+            "placeholder": "Enter imageThumb",
+            "id": "thumbImage",
+            "validation": ["", "trim", ""],
+            "url": ""
+        },{
+            "name": "IsUpcoming",
+            "type": "tags",
+            "isSort": "",
+            "tableRef": "isUpcoming",
+            "id": "status",
+            "validation": ["required", "trim", ""],
+            "url": "",
+            "dropDownField": "",
+            "dropDownType": "single",
+            "onView": true,
+            "dropDown": [true, false]
+        }, {
+            "name": "isReleased",
+            "type": "tags",
+            "isSort": "",
+            "tableRef": "isReleased",
+            "id": "status1",
+            "validation": ["required", "trim", ""],
+            "url": "",
+            "dropDownField": "",
+            "dropDownType": "single",
+            "onView": true,
+            "dropDown": [true, false]
+        }, {
+            "name": "description",
+            "isSort": "",
+            "tableRef": "description"
+        }, {
+            "name": "urlSlug",
+            "isSort": "",
+            "tableRef": "urlSlug"
+        }, {
+            "name": "movieHashtag",
+            "isSort": "",
+            "tableRef": "movieHashtag"
+        }, {
+            "name": "Cast&Crew Section 1",
+            "isSort": "",
+            "tableRef": "castBlock1",
+            "type": "wysiwyg",
+            "placeholder": "Enter name",
+            "id": "input1",
+            "validation": ["", "trim", ""],
+            "url": ""
+        }, {
+            "name": "Cast&Crew Section 2",
+            "isSort": "",
+            "tableRef": "castBlock2",
+            "type": "wysiwyg",
+            "placeholder": "Enter name",
+            "id": "input1",
+            "validation": ["", "trim", ""],
+            "url": ""
+        }, {
+            "name": "Cast&Crew Section 3",
+            "isSort": "",
+            "tableRef": "castBlock3",
+            "type": "wysiwyg",
+            "placeholder": "Enter name",
+            "id": "input1",
+            "validation": ["", "trim", ""],
+            "url": ""
+        }, {
+            "name": "Cast&Crew Section 4",
+            "isSort": "",
+            "tableRef": "castBlock4",
+            "type": "wysiwyg",
+            "placeholder": "Enter name",
+            "id": "input1",
+            "validation": ["", "trim", ""],
+            "url": ""
+        }
+    ],
     "action": [{
         "name": "submit",
         "action": "submitVideo",

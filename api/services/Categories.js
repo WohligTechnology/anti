@@ -1,32 +1,28 @@
 var schema = new Schema({
-    
+
     name: {
         type: String,
         required: true,
     },
     description: {
         type: String,
-       
     },
     status: {
-        type: Boolean,
-       
+        type: String,
+
     },
     order: {
         type: Number,
-      
     },
     homeImage: {
         type: String,
-       
     },
     background: {
         type: String,
-    
     },
     urlSlug: {
         type: String,
-       
+
     },
 });
 

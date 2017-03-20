@@ -10,7 +10,6 @@ var schema = new Schema({
     },
     thumbImage: {
         type: String,
-
     },
     title: {
         type: String,
@@ -26,16 +25,19 @@ var schema = new Schema({
     },
     video: {
         type: String,
-
     },
     isUpcoming: {
-        type: Boolean,
-        enum: ["True", "False"]
+        type: String,
+        default: "true",
+        enum: ["true", "false"],
+        required: true
 
     },
     isReleased: {
-        type: Boolean,
-        enum: ["True", "False"]
+        type: String,
+        default: "false",
+        enum: ["true", "false"],
+        required: true
 
     },
     description: {
@@ -80,6 +82,7 @@ schema.plugin(deepPopulate, {});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('Videos', schema);
+var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
 var model = {
@@ -88,31 +91,31 @@ var model = {
 
         console.log(data);
         Videos.findOneAndUpdate({
-            _id: data._id,               
+            _id: data._id,
         }, {
-            $push : {
-               videoGallery: {
-                   $each:  data.videoGallery                                
+            $push: {
+                videoGallery: {
+                    $each: data.videoGallery
                 }
             }
         }).exec(function (err, found) {
 
-                if (err) {
-                    // console.log(err);
-                    callback(err, null);
+            if (err) {
+                // console.log(err);
+                callback(err, null);
+            } else {
+
+                if (found) {
+
+                    callback(null, found);
                 } else {
-
-                    if (found) {
-
-                        callback(null, found);
-                    } else {
-                        callback(null, {
-                            message: "No Data Found"
-                        });
-                    }
+                    callback(null, {
+                        message: "No Data Found"
+                    });
                 }
+            }
 
-            })
+        })
     },
 
 
@@ -121,13 +124,13 @@ var model = {
         console.log(data);
         Videos.update({
             '_id': data._id,
-            'videoGallery._id':data.id                
+            'videoGallery._id': data.id
         }, {
             '$set': {
-                'videoGallery.$.image':data.image,
-                'videoGallery.$.caption':data.caption
+                'videoGallery.$.image': data.image,
+                'videoGallery.$.caption': data.caption
             }
-        },function (err, found) {
+        }, function (err, found) {
 
             if (err) {
                 console.log(err);
@@ -148,16 +151,16 @@ var model = {
     removeGalleryPhotos: function (data, callback) {
 
         console.log("DATA", data);
-       Videos.update({
+        Videos.update({
             '_id': data._id,
-            'videoGallery._id':data.id                
+            'videoGallery._id': data.id
         }, {
             '$pull': {
                 videoGallery: {
                     _id: data.id
                 }
             }
-        },function (err, found) {
+        }, function (err, found) {
             if (err) {
                 console.log(err);
                 callback(err, null);
@@ -204,31 +207,31 @@ var model = {
 
         console.log(data);
         Videos.findOneAndUpdate({
-            _id: data._id,               
+            _id: data._id,
         }, {
-            $push : {
-               videoBehindTheScene: {
-                   $each:  data.videoBehindTheScene                              
+            $push: {
+                videoBehindTheScene: {
+                    $each: data.videoBehindTheScene
                 }
             }
         }).exec(function (err, found) {
 
-                if (err) {
-                    // console.log(err);
-                    callback(err, null);
+            if (err) {
+                // console.log(err);
+                callback(err, null);
+            } else {
+
+                if (found) {
+
+                    callback(null, found);
                 } else {
-
-                    if (found) {
-
-                        callback(null, found);
-                    } else {
-                        callback(null, {
-                            message: "No Data Found"
-                        });
-                    }
+                    callback(null, {
+                        message: "No Data Found"
+                    });
                 }
+            }
 
-            })
+        })
     },
 
     editBehindTheScene: function (data, callback) {
@@ -236,13 +239,13 @@ var model = {
         console.log(data);
         Videos.update({
             '_id': data._id,
-            'videoBehindTheScene._id':data.id                
+            'videoBehindTheScene._id': data.id
         }, {
             '$set': {
-                'videoBehindTheScene.$.image':data.image,
-                'videoBehindTheScene.$.caption':data.caption
+                'videoBehindTheScene.$.image': data.image,
+                'videoBehindTheScene.$.caption': data.caption
             }
-        },function (err, found) {
+        }, function (err, found) {
             if (err) {
                 console.log(err);
                 callback(err, null);
@@ -262,16 +265,16 @@ var model = {
     removeBehindTheScene: function (data, callback) {
 
         console.log("DATA", data);
-       Videos.update({
+        Videos.update({
             '_id': data._id,
-            'videoBehindTheScene._id':data.id                
+            'videoBehindTheScene._id': data.id
         }, {
             '$pull': {
                 videoBehindTheScene: {
                     _id: data.id
                 }
             }
-        },function (err, found) {
+        }, function (err, found) {
             if (err) {
                 console.log(err);
                 callback(err, null);
@@ -288,55 +291,157 @@ var model = {
         })
     },
 
-    //pipeline
-     getAggregatePipeLine: function (data) {
+    //pipeLine
+    getAggregatePipeLine: function (data) {
 
-        var pipeline = [
-            
+        var pipeline = [ // Stage 1
+            {
+                $lookup: {
+                    "from": "categories",
+                    "localField": "category",
+                    "foreignField": "_id",
+                    "as": "categories_data"
+                }
+            },
+
+            // Stage 2
+            {
+                $unwind: {
+                    path: "$categories_data",
+
+                }
+            },
+
         ];
-        
+
         return pipeline;
     },
 
-    getProjectReport: function (data, callback) {
-        var pipeLine = Project.getAggregatePipeLine(data);
+    //Released Video api for fiction 
+
+    getFictionVideoRelease: function (data, callback) {
+        var pipeLine = Videos.getAggregatePipeLine(data);
         console.log(pipeLine);
-        async.parallel({
-            complete: function (callback) {
-                var newPipeLine = _.cloneDeep(pipeLine);
-                //If we directly use pipeline instead of newPipeLine then $group will change the pipeline data & we will not able to use it for next $group. So, we have to make a copy of pipeline everytime for new $group operation
-                newPipeLine.push({
-                    
+
+        var newPipeLine = _.cloneDeep(pipeLine);
+
+        newPipeLine.push({
+            $match: {
+                "categories_data.name": "Fiction",
+                "isReleased": "true"
+            }
+
+        });
+
+        Videos.aggregate(newPipeLine, function (err, fiction) {
+
+            if (err) {
+                console.log(err);
+                callback(err, null);
+            } else {
+                console.log(fiction);
+                callback(null, fiction);
+            }
+        });
+    },
+
+    //Upcoming Video api for fiction
+
+    getFictionVideoUpcoming: function (data, callback) {
+        console.log("data", data);
+        var pipeLine = Videos.getAggregatePipeLine(data);
+        console.log(pipeLine);
+        var newPipeLine = _.cloneDeep(pipeLine);
+
+        newPipeLine.push({
+            $match: {
+                "categories_data.name": "Fiction",
+                "isUpcoming": "true"
+            }
+        });
+
+        Videos.aggregate(newPipeLine, function (err, fiction) {
+            if (err) {
+                console.log(err);
+                callback(err, null);
+            } else {
+                console.log(fiction);
+                callback(null, fiction);
+            }
+        });
+    },
+    //Released Video api for Inspire 
+
+    getInspireVideoRelease: function (data, callback) {
+        var pipeLine = Videos.getAggregatePipeLine(data);
+        console.log(pipeLine);
+
+        var newPipeLine = _.cloneDeep(pipeLine);
+
+        newPipeLine.push({
+            $match: {
+                "categories_data.name": "Inspire",
+                "isReleased": "true"
+            }
+
+        });
+
+        Videos.aggregate(newPipeLine, function (err, fiction) {
+
+            if (err) {
+                console.log(err);
+                callback(err, null);
+            } else {
+                console.log(fiction);
+                callback(null, fiction);
+            }
+        });
+    },
+
+    //Upcoming Video api for inspire
+
+    getInspireVideoUpcoming: function (data, callback) {
+        console.log("data", data);
+        var pipeLine = Videos.getAggregatePipeLine(data);
+        console.log(pipeLine);
+        var newPipeLine = _.cloneDeep(pipeLine);
+
+        newPipeLine.push({
+            $match: {
+                "categories_data.name": "Inspire",
+                "isUpcoming": "true"
+            }
+        });
+
+        Videos.aggregate(newPipeLine, function (err, fiction) {
+            if (err) {
+                console.log(err);
+                callback(err, null);
+            } else {
+                console.log(fiction);
+                callback(null, fiction);
+            }
+        });
+    },
+    //  
+
+    //One video on the basis of id
+
+    getOneVideo: function (reqBody, callback) {
+        Videos.findOne({
+            _id: reqBody._id
+        }).exec(function (error, record) {
+            if (error) {
+                callback(error, null);
+            } else if (!_.isEmpty(record)) {
+                callback(null, record);
+            } else {
+                callback(null, {
+                    message: "Unable to get video!"
                 });
-                Project.aggregate(newPipeLine, callback);
+            }
+        });
+    },
 
-            },
-            state: function (callback) {
-                var newPipeLine = _.cloneDeep(pipeLine);
-                newPipeLine.push({
-                    
-                });
-                Project.aggregate(newPipeLine, function (err, data) {
-                    if (err) {
-                        callback(err);
-                    } else {
-                        
-                        };
-                        
-                        callback(err, obj);
-                    })
-
-            },
-            totalComponents: function (callback) {
-                var newPipeLine = _.cloneDeep(pipeLine);
-                newPipeLine.push({
-                    
-                });
-                Project.aggregate(newPipeLine, callback);
-
-            },           
-        }, callback);
-
-    }
 };
 module.exports = _.assign(module.exports, exports, model);

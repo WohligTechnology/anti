@@ -11,12 +11,27 @@
         "tableRef": "video"
     }, {
         "name": "Category",
-        "type": "selectFromTable",
+        "type": "tags",
         "tableRef": "category",
-        "searchApi": "searchCall",
-        "placeholder": "Enter Category",
+        "placeholder": "Enter category",
         "id": "category",
-        "url": "Categories/search"
+        "validation": ["", "trim", ""],
+        "url": "Categories/search",
+        "dropDownField": "name",
+        "dropDownType": "multiple",
+        "onView": true
+    }, {
+        "name": "Status",
+        "type": "tags",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": [true, false]
     }],
     "action": [{
         "name": "submit",

@@ -8,8 +8,11 @@
         "name": "Home Video",
         "isSort": "",
         "tableRef": "video"
-    }
-    ],
+    }, {
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
