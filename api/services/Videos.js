@@ -177,7 +177,6 @@ var model = {
         })
     },
 
-
     findOneVideo: function (data, callback) {
         Videos.findOne({
             _id: data._id
