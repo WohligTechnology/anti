@@ -73,57 +73,34 @@ var controller = {
             })
         }
     },
-    getFictionVideoRelease: function (req, res) {
-        if (req.body) {
-            Videos.getFictionVideoRelease(req.body, res.callback);
-        } else {
-            res.json({
-                value: false,
-                data: {
-                    message: "Invalid Request"
-                }
-            })
-        }
-    },
-    getFictionVideoUpcoming: function (req, res) {
-        if (req.body) {
-            Videos.getFictionVideoUpcoming(req.body, res.callback);
-        } else {
-            res.json({
-                value: false,
-                data: {
-                    message: "Invalid Request"
-                }
-            })
-        }
-    },
-    getInspireVideoRelease: function (req, res) {
-        if (req.body) {
-            Videos.getInspireVideoRelease(req.body, res.callback);
-        } else {
-            res.json({
-                value: false,
-                data: {
-                    message: "Invalid Request"
-                }
-            })
-        }
-    },
-    getInspireVideoUpcoming: function (req, res) {
-        if (req.body) {
-            Videos.getInspireVideoUpcoming(req.body, res.callback);
-        } else {
-            res.json({
-                value: false,
-                data: {
-                    message: "Invalid Request"
-                }
-            })
-        }
-    },
+  //api 
     getOneVideo: function (req, res) {
         if (req.body) {
             Videos.getOneVideo(req.body, res.callback);
+        } else {
+            res.json({
+                value: false,
+                data: {
+                    message: "Invalid Request"
+                }
+            })
+        }
+    },
+    getFiction: function (req, res) {
+        if (req.body) {
+            Videos.getFiction(req.body, res.callback);
+        } else {
+            res.json({
+                value: false,
+                data: {
+                    message: "Invalid Request"
+                }
+            })
+        }
+    },
+    getInspire: function (req, res) {
+        if (req.body) {
+            Videos.getInspire(req.body, res.callback);
         } else {
             res.json({
                 value: false,

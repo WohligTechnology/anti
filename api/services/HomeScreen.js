@@ -41,14 +41,6 @@ var model = {
 			}
 		},
 
-		// // Stage 2
-		// {
-		// 	$unwind: {
-		// 	    path : "$categories_data"
-			
-		// 	}
-		// }
-
         ];
 
         return pipeline;

@@ -202,7 +202,6 @@ var model = {
 
     //BehindTheScene-----
 
-
     saveBehind: function (data, callback) {
 
         console.log(data);
@@ -317,114 +316,6 @@ var model = {
         return pipeline;
     },
 
-    //Released Video api for fiction 
-
-    getFictionVideoRelease: function (data, callback) {
-        var pipeLine = Videos.getAggregatePipeLine(data);
-        console.log(pipeLine);
-
-        var newPipeLine = _.cloneDeep(pipeLine);
-
-        newPipeLine.push({
-            $match: {
-                "categories_data.name": "Fiction",
-                "isReleased": "true"
-            }
-
-        });
-
-        Videos.aggregate(newPipeLine, function (err, fiction) {
-
-            if (err) {
-                console.log(err);
-                callback(err, null);
-            } else {
-                console.log(fiction);
-                callback(null, fiction);
-            }
-        });
-    },
-
-    //Upcoming Video api for fiction
-
-    getFictionVideoUpcoming: function (data, callback) {
-        console.log("data", data);
-        var pipeLine = Videos.getAggregatePipeLine(data);
-        console.log(pipeLine);
-        var newPipeLine = _.cloneDeep(pipeLine);
-
-        newPipeLine.push({
-            $match: {
-                "categories_data.name": "Fiction",
-                "isUpcoming": "true"
-            }
-        });
-
-        Videos.aggregate(newPipeLine, function (err, fiction) {
-            if (err) {
-                console.log(err);
-                callback(err, null);
-            } else {
-                console.log(fiction);
-                callback(null, fiction);
-            }
-        });
-    },
-    //Released Video api for Inspire 
-
-    getInspireVideoRelease: function (data, callback) {
-        var pipeLine = Videos.getAggregatePipeLine(data);
-        console.log(pipeLine);
-
-        var newPipeLine = _.cloneDeep(pipeLine);
-
-        newPipeLine.push({
-            $match: {
-                "categories_data.name": "Inspire",
-                "isReleased": "true"
-            }
-
-        });
-
-        Videos.aggregate(newPipeLine, function (err, fiction) {
-
-            if (err) {
-                console.log(err);
-                callback(err, null);
-            } else {
-                console.log(fiction);
-                callback(null, fiction);
-            }
-        });
-    },
-
-    //Upcoming Video api for inspire
-
-    getInspireVideoUpcoming: function (data, callback) {
-        console.log("data", data);
-        var pipeLine = Videos.getAggregatePipeLine(data);
-        console.log(pipeLine);
-        var newPipeLine = _.cloneDeep(pipeLine);
-
-        newPipeLine.push({
-            $match: {
-                "categories_data.name": "Inspire",
-                "isUpcoming": "true"
-            }
-        });
-
-        Videos.aggregate(newPipeLine, function (err, fiction) {
-            if (err) {
-                console.log(err);
-                callback(err, null);
-            } else {
-                console.log(fiction);
-                callback(null, fiction);
-            }
-        });
-    },
-    //  
-
     //One video on the basis of id
 
     getOneVideo: function (reqBody, callback) {
@@ -442,6 +333,112 @@ var model = {
             }
         });
     },
+
+    //Fiction release and upcoming
+
+    getFiction: function (data, callback) {
+        var pipeLine = Videos.getAggregatePipeLine(data);
+        console.log(pipeLine);
+        async.parallel({
+            Released: function (callback) {
+                var newPipeLine = _.cloneDeep(pipeLine);
+                //If we directly use pipeline instead of newPipeLine then $group will change the pipeline data & we will not able to use it for next $group. So, we have to make a copy of pipeline everytime for new $group operation
+                newPipeLine.push({
+                    $match: {
+                        "categories_data.name": "Fiction",
+                        "isReleased": "true"
+                    }
+
+                });
+
+                Videos.aggregate(newPipeLine, function (err, fiction) {
+
+                    if (err) {
+                        console.log(err);
+                        callback(err, null);
+                    } else {
+                        console.log(fiction);
+                        callback(null, fiction);
+                    }
+                });
+
+            },
+            Upcoming: function (callback) {
+                var newPipeLine = _.cloneDeep(pipeLine);
+                newPipeLine.push({
+                    $match: {
+                        "categories_data.name": "Fiction",
+                        "isUpcoming": "true"
+                    }
+                });
+
+                Videos.aggregate(newPipeLine, function (err, fiction) {
+                    if (err) {
+                        console.log(err);
+                        callback(err, null);
+                    } else {
+                        console.log(fiction);
+                        callback(null, fiction);
+                    }
+                });
+
+            },
+        }, callback);
+
+    },
+
+    //Inspire released abd upcoming
+
+    getInspire: function (data, callback) {
+        var pipeLine = Videos.getAggregatePipeLine(data);
+        console.log(pipeLine);
+        async.parallel({
+            Released: function (callback) {
+                var newPipeLine = _.cloneDeep(pipeLine);
+                //If we directly use pipeline instead of newPipeLine then $group will change the pipeline data & we will not able to use it for next $group. So, we have to make a copy of pipeline everytime for new $group operation
+                newPipeLine.push({
+                    $match: {
+                        "categories_data.name": "Inspire",
+                        "isReleased": "true"
+                    }
+
+                });
+
+                Videos.aggregate(newPipeLine, function (err, fiction) {
+
+                    if (err) {
+                        console.log(err);
+                        callback(err, null);
+                    } else {
+                        console.log(fiction);
+                        callback(null, fiction);
+                    }
+                });
+
+            },
+            Upcoming: function (callback) {
+                var newPipeLine = _.cloneDeep(pipeLine);
+                newPipeLine.push({
+                    $match: {
+                        "categories_data.name": "Inspire",
+                        "isUpcoming": "true"
+                    }
+                });
+
+                Videos.aggregate(newPipeLine, function (err, fiction) {
+                    if (err) {
+                        console.log(err);
+                        callback(err, null);
+                    } else {
+                        console.log(fiction);
+                        callback(null, fiction);
+                    }
+                });
+
+            },
+        }, callback);
+
+    }
 
 };
 module.exports = _.assign(module.exports, exports, model);
