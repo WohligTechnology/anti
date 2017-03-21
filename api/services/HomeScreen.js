@@ -41,13 +41,13 @@ var model = {
 			}
 		},
 
-		// Stage 2
-		{
-			$unwind: {
-			    path : "$categories_data"
+		// // Stage 2
+		// {
+		// 	$unwind: {
+		// 	    path : "$categories_data"
 			
-			}
-		}
+		// 	}
+		// }
 
         ];
 
