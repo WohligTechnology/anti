@@ -42,11 +42,6 @@
         "id": "background",
         "validation": ["", "trim", ""],
         "url": ""
-    },
-    {
-        "name": "Url",
-        "isSort": "",
-        "tableRef": "urlSlug"
     }],
     "action": [{
         "name": "submit",

@@ -19,11 +19,7 @@ var schema = new Schema({
     },
     background: {
         type: String,
-    },
-    urlSlug: {
-        type: String,
-
-    },
+    }
 });
 
 schema.plugin(deepPopulate, {});
