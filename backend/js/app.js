@@ -87,7 +87,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             controller: 'JagzCtrl'
         });
 
-    $urlRouterProvider.otherwise("/dashboard");
+    $urlRouterProvider.otherwise("/page/viewCategory//");
     $locationProvider.html5Mode(isproduction);
 });
 
